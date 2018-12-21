@@ -17,12 +17,28 @@ class App extends Component {
   render() {
     return (
       <Router className="App">
-        <section className="hero is-medium">
-          <div className="hero-body">
-            <Route exact path="/" render={(props) => ( <Imprint contentful={client} /> )} />
-            <Route path="/app" render={(props) => (<FAQ contentful={client}/>)} />
-          </div>
-        </section>
+        <div>
+          <section>
+            <div className="columns is-fullheight">
+              <div className="column is-1 is-sidebar-menu is-hidden-mobile">
+                <aside className="menu">
+                  <p className="menu-label">
+                    General
+                  </p>
+                  <ul className="menu-list">
+                    <li>Dashboard</li>
+                    <li>Help</li>
+                  </ul>
+                </aside>
+              </div>
+              <div className="column">
+                <Route exact path="/impressum/de" render={(props) => ( <Imprint contentful={client} locale="de-DE"/> )} />
+                <Route path="/impressum/en" render={(props) => ( <Imprint contentful={client} locale="en-GB"/> )} />
+                <Route path="/faq/" render={(props) => (<FAQ contentful={client}/>)} />
+              </div>
+            </div>
+          </section>
+        </div>
       </Router>
     );
   }
