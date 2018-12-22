@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import RichtText from './richtext';
 import Section from './contentBlock';
+import RichText from './richtext';
 
 class Imprint extends Component {
     constructor(props) {
@@ -25,11 +25,12 @@ class Imprint extends Component {
     }
 
     renderSections() {
-        const sections = this.state.entry.sections.map((section) => ( <Section contentBlock={section}/>));
+        const sections = this.state.entry.sections.map((section) => ( <p><Section header={section.fields['header']} content={section.fields['content']}/><br /></p> ));
+
         return(
-            <article className="column is-8 content">
-            {sections}
-            </article>
+            <div className="column is-8">
+                {sections}
+            </div>
         )
     }
 
@@ -44,20 +45,17 @@ class Imprint extends Component {
             <div>
                 <section className="hero is-info">
                     <div className="hero-body">
-                        <div className="container">
-                            <h1 className="title has-text-centered">
-                                { this.state.entry.title }
-                            </h1>
-                        </div>
+                        <h1 className="title has-text-centered">
+                            { this.state.entry.title }
+                        </h1>
                     </div>
                 </section>
-                <br/>
                 <section className="hero">
                     <div className="hero-body columns is-centered is-multiline">
-                        <article className="column is-8 content">
-                            <h2 className="title"> { this.state.entry.header } </h2>
-                            <RichtText richtext={this.state.entry.intro} />
-                        </article>
+                        <div className="column is-8 content">
+                            <h2>{ this.state.entry.header }</h2>
+                            <RichText richtext={this.state.entry.intro}/>
+                        </div>
                         {sections}
                     </div>
                 </section>

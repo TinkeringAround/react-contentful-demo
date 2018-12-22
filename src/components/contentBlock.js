@@ -1,21 +1,32 @@
 import React from 'react';
 import RichText from './richtext';
-import './richtext.scss';
+
+import './contentBlock.scss';
 
 const ContentBlock = (props) => {
   var header = "";
-  var content = "";
+  var classNames = "content ";
 
-  if(props.contentBlock) {
-    header = props.contentBlock.fields['header'];
-    content = <RichText richtext={props.contentBlock.fields['content']}/>
+  if(!props.content) {
+    return(
+      <div></div>
+    )
+  }
+
+  if(props.header) {
+    header = props.header;
+  }
+
+  if(props.className) {
+    classNames += props.className;
   }
 
   return(
-    <article className="content">
-        <strong>{header}</strong>
-        {content}
-    </article>
+    <div className={classNames}>
+        {props.children}
+        <h5 className="has-text-weight-bold">{header}</h5>
+        <RichText className="single-spaced" richtext={props.content}/>
+    </div>
   );
 }
 
