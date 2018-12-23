@@ -5,18 +5,3 @@ $family-sans-serif: "Nunito", sans-serif;
 // Import Bulma
 @import "bulma/bulma.sass";
 
-.is-sidebar-menu {
-  padding: 2.5rem;
-}
-.is-sidebar-menu li a {
-  color: white;
-}
-
-.columns.is-fullheight {
-  min-height: calc(100vh - ( 3.25rem - .75rem ) );
-  max-height: calc(100vh - ( 3.25rem - .75rem ) );
-  height: calc(100vh - ( 3.25rem - .75rem ) );
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-}
