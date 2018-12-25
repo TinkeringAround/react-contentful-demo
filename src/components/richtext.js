@@ -1,21 +1,14 @@
 import React from 'react';
-
-import './contentBlock.scss';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 const RichText = (props) => {
   var paragraphs = "";
-  var classNames = "";
-
-  if(props.className) {
-    classNames += props.className;
-  }
 
   if(props.richtext) {
     paragraphs = props.richtext.content.map((paragraph) => {
-      var lines = paragraph.content.map( (line) => line.value);
-  
+
       return(
-        <p className={classNames}>{lines}</p>
+        <p>{documentToHtmlString(paragraph)}</p>
       )
     });
   }

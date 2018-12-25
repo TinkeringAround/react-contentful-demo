@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Section from "./contentBlock";
 import RichText from "./richtext";
 
+import "../scss/imprint.scss";
+
 class Imprint extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,6 @@ class Imprint extends Component {
         this.setState({
           entry: entries.items[0].fields
         });
-        console.log(this.state.entry);
       })
       .catch(error => {
         console.log(error);
@@ -30,16 +31,13 @@ class Imprint extends Component {
 
   renderSections() {
     const sections = this.state.entry.sections.map(section => (
-      <p>
-        <Section
-          header={section.fields["header"]}
-          content={section.fields["content"]}
-        />
-        <br />
-      </p>
+      <Section
+        header={section.fields["header"]}
+        content={section.fields["content"]}
+      />
     ));
 
-    return <div className="column is-8">{sections}</div>;
+    return sections;
   }
 
   render() {
@@ -50,20 +48,24 @@ class Imprint extends Component {
     }
 
     return (
-      <div>
-        <section className="hero is-info">
-          <div className="hero-body content">
+      <div id="imprint">
+        <header id="imprint-header" className="hero is-info">
+          <article className="hero-body content">
             <h1 className="title has-text-centered">
               {this.state.entry.title}
             </h1>
-          </div>
-        </section>
-        <section className="hero">
-          <div className="hero-body columns is-centered is-multiline">
-            <div className="column is-8 content">
-              <h2>{this.state.entry.header}</h2>
+          </article>
+        </header>
+
+        <section
+          id="imprint-main"
+          className="hero-body columns is-centered is-multiline"
+        >
+          <div className="column is-7 content">
+            <article id="intro">
+              <h1>{this.state.entry.header}</h1>
               <RichText richtext={this.state.entry.intro} />
-            </div>
+            </article>
             {sections}
           </div>
         </section>

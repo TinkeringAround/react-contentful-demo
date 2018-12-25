@@ -1,11 +1,8 @@
 import React from 'react';
 import RichText from './richtext';
 
-import './contentBlock.scss';
-
 const ContentBlock = (props) => {
   var header = "";
-  var classNames = "content ";
 
   if(!props.content) {
     return(
@@ -17,16 +14,12 @@ const ContentBlock = (props) => {
     header = props.header;
   }
 
-  if(props.className) {
-    classNames += props.className;
-  }
-
   return(
-    <div className={classNames}>
+    <article className="contentBlock">
         {props.children}
-        <h5 className="has-text-weight-bold">{header}</h5>
-        <RichText className="single-spaced" richtext={props.content}/>
-    </div>
+        <h2>{header}</h2>
+        <RichText richtext={props.content}/>
+    </article>
   );
 }
 

@@ -1,0 +1,26 @@
+// Import VW Font von Contentful und verwende es als Font
+@font-face {
+  font-family: "VW Text";
+  src: url("https://assets.ctfassets.net/pntshaoi0gaf/6PhbWwIlGw4WY2IIkQKOkW/caed6239d69f4132d3d6cedd06ed728d/VWText_Regular.otf");
+}
+
+@font-face {
+    font-family: "VW Headline OT";
+    src: url("https://assets.ctfassets.net/pntshaoi0gaf/6ym6c6hMJioS4w2UmGkKGu/30c9c062963da9d288f821a427cc2ba4/VWHeadlineOT_Semibold.ttf");
+}
+
+// Import Bulma
+@import "bulma/bulma.sass";
+
+body {
+    font-family: "VW Text", "Arial", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+}
+
+h1 h2 {
+    font-family: "VW Headline OT", "Arial", sans-serif;
+    font-weight: bold;
+}
