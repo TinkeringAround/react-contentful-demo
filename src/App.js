@@ -25,7 +25,7 @@ class App extends Component {
               <ul className="navigation">
                 <li>
                   <img
-                    src="https://images.ctfassets.net/pntshaoi0gaf/5n8rKxJhv2CQw26iCyysi6/364461c3a59f9dcdc66b75161d8497ff/volkswagen-logo-2015.jpg"
+                    src="https://images.ctfassets.net/pntshaoi0gaf/5A5oxIWjluIcga8QQUiCuc/fd8489b85b84bbfc822b93e1d99ffb2d/VWLogo.png"
                     alt="VW Logo"
                     width="60px"
                     height="60px"
@@ -33,16 +33,31 @@ class App extends Component {
                 </li>
 
                 <li>
-                  <Link to="/imprint/de">Car-Net</Link>
+                  <a href="#">Car-Net</a>
                 </li>
 
                 <li>
-                  <span className="fas fa-question-circle"></span>
-                  <Link to="/imprint/de">Impressum</Link>
+                  <Link to="/faq">
+                    <span className="fas fa-question-circle fa-2x" />
+                    <br />
+                    FAQ
+                  </Link>
                 </li>
 
                 <li>
-                  <Link to="/faq">FAQ</Link>
+                  <Link to="/imprint/de">
+                    <span className="fas fa-info-circle fa-2x" />
+                    <br />
+                    Impressum
+                  </Link>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <i class="fas fa-sign-in-alt fa-2x" />
+                    <br />
+                    Anmelden
+                  </a>
                 </li>
               </ul>
             </nav>

@@ -22,12 +22,11 @@
 }
 
 .navigation li {
-  font-family: "VW Headline OT Black", "Arial", sans-serif;
-  font-weight: bold;
+  font-family: "VW Headline OT", "Arial", sans-serif;
   font-size: 18px;
   text-align: center;
-  color: black;
 
+  color: grey;
   background-color: white;
   border-bottom: 1px #e0e0e0 solid;
 
@@ -35,11 +34,12 @@
 }
 
 .navigation a {
-  text-decoration: none;
+    color: grey;
+    text-decoration: none;
 }
 
 .navigation a:visited {
-  color: black;
+  color: grey;
 }
 
 .navigation a:hover {
