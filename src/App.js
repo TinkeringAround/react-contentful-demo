@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./scss/App.scss";
 
 //import my own modules
 import Imprint from "./components/imprint";
 import FAQ from "./components/faq";
+
+import "./scss/App.scss";
 
 const contentful = require("contentful");
 
@@ -17,42 +18,47 @@ const client = contentful.createClient({
 class App extends Component {
   render() {
     return (
-      <Router className="App">
-        <div className="columns is-gapless">
-          <aside className="column is-1 has-background-light">
-            
-            <aside className="">
-                <figure className="image is-128x128">
+      <Router>
+        <div id="app">
+          <aside className="sidebar">
+            <nav>
+              <ul className="navigation">
+                <li>
                   <img
-                    src="https://images.ctfassets.net/pntshaoi0gaf/5n8rKxJhv2CQw26iCyysi6/acf3944e39cca76a5d212001c58adfb9/VW-Logo.png"
+                    src="https://images.ctfassets.net/pntshaoi0gaf/5n8rKxJhv2CQw26iCyysi6/364461c3a59f9dcdc66b75161d8497ff/volkswagen-logo-2015.jpg"
                     alt="VW Logo"
+                    width="60px"
+                    height="60px"
                   />
-                </figure>
+                </li>
 
-              <div className="">
-                <Link to="/" className="title is-size-5 has-text-black">CAR-NET</Link>
-              </div>
+                <li>
+                  <Link to="/imprint/de">Car-Net</Link>
+                </li>
 
-              <div className="">
-                <Link to="/impressum/de" className="title is-size-5 has-text-black">
-                  Impressum
-                </Link>
-              </div>
-            </aside>
+                <li>
+                  <span className="fas fa-question-circle"></span>
+                  <Link to="/imprint/de">Impressum</Link>
+                </li>
 
+                <li>
+                  <Link to="/faq">FAQ</Link>
+                </li>
+              </ul>
+            </nav>
           </aside>
 
-          <div className="column is-11 is-fullheight">
+          <div id="main-content">
             <Route
               exact
-              path="/impressum/de"
+              path="/imprint/de"
               render={props => <Imprint contentful={client} locale="de-DE" />}
             />
             <Route
-              path="/impressum/en"
+              path="/imprint/en"
               render={props => <Imprint contentful={client} locale="en-GB" />}
             />
-            <Route path="/faq/" render={props => <FAQ contentful={client} />} />
+            <Route path="/faq" render={props => <FAQ contentful={client} />} />
           </div>
         </div>
       </Router>

@@ -1,7 +1,7 @@
 import React from 'react';
 import RichText from './richtext';
 
-const ContentBlock = (props) => {
+const Block = (props) => {
   var header = "";
 
   if(!props.content) {
@@ -15,7 +15,7 @@ const ContentBlock = (props) => {
   }
 
   return(
-    <article className="contentBlock">
+    <article className="block">
         {props.children}
         <h2>{header}</h2>
         <RichText richtext={props.content}/>
@@ -23,4 +23,4 @@ const ContentBlock = (props) => {
   );
 }
 
-export default ContentBlock;
+export default Block;
