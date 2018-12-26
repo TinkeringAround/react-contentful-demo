@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 //import my own modules
 import Imprint from "./components/imprint";
 import FAQ from "./components/faq";
+import Home from "./components/home";
 
 import "./scss/App.scss";
 
@@ -33,7 +34,11 @@ class App extends Component {
                 </li>
 
                 <li>
-                  <a href="#">Car-Net</a>
+                  <Link to="/">
+                    <i className="fas fa-home fa-2x" />
+                    <br />
+                    Start
+                  </Link>
                 </li>
 
                 <li>
@@ -51,28 +56,24 @@ class App extends Component {
                     Impressum
                   </Link>
                 </li>
-
-                <li>
-                  <a href="#">
-                    <i class="fas fa-sign-in-alt fa-2x" />
-                    <br />
-                    Anmelden
-                  </a>
-                </li>
               </ul>
             </nav>
           </aside>
 
           <div id="main-content">
+            <Route exact path="/" render={props => <Home />} />
+
             <Route
               exact
               path="/imprint/de"
               render={props => <Imprint contentful={client} locale="de-DE" />}
             />
+
             <Route
               path="/imprint/en"
               render={props => <Imprint contentful={client} locale="en-GB" />}
             />
+            
             <Route path="/faq" render={props => <FAQ contentful={client} />} />
           </div>
         </div>
