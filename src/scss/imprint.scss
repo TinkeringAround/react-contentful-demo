@@ -1,25 +1,60 @@
 /* Global */
 #imprint {
-    font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  font-size: 14px;
 }
 
+/* header */
+#imprint .header {
+  flex: 1;
+  padding: 40px 0;
+  text-align: center;
+  color: white;
+  background-color: rgb(19, 147, 233);
+}
+
+#imprint .header h1 {
+  font-size: 32px;
+}
+
+/* content */
+#imprint .content {
+  flex: 1;
+}
+
+/* Intro Text */
 #intro {
-    margin-bottom: 35px;
+  width: 50%;
+  margin: 0 auto 10px auto;
 }
 
 #intro h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+  font-family: "VW Headline OT Black", "Arial", sans-serif;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-#imprint-main .contentBlock {
-    margin-top: 25px;
+#intro p {
+  font-size: 14px;
 }
 
-#imprint-main .contentBlock h2 {
-    font-size: 15px;
+/* Sections - contentBlock */
+#imprint .block {
+  width: 50%;
+  margin: 25px auto 0 auto;
 }
 
-#imprint-main .contentBlock p{
-    line-height: 0.5;
+#imprint .block h2 {
+  font-family: "VW Headline OT Black", "Arial", sans-serif;
+  font-size: 15px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  line-height: 0.5;
+}
+
+#imprint .block p {
+  font-size: 14px;
+  margin: 0;
 }

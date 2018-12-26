@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Section from "./contentBlock";
+import Section from "./block";
 import RichText from "./richtext";
 
 import "../scss/imprint.scss";
@@ -49,25 +49,16 @@ class Imprint extends Component {
 
     return (
       <div id="imprint">
-        <header id="imprint-header" className="hero is-info">
-          <article className="hero-body content">
-            <h1 className="title has-text-centered">
-              {this.state.entry.title}
-            </h1>
-          </article>
+        <header className="header">
+          <h1>{this.state.entry.title}</h1>
         </header>
 
-        <section
-          id="imprint-main"
-          className="hero-body columns is-centered is-multiline"
-        >
-          <div className="column is-7 content">
-            <article id="intro">
-              <h1>{this.state.entry.header}</h1>
-              <RichText richtext={this.state.entry.intro} />
-            </article>
-            {sections}
-          </div>
+        <section className="content">
+          <article id="intro">
+            <h1>{this.state.entry.header}</h1>
+            <RichText richtext={this.state.entry.intro} />
+          </article>
+          {sections}
         </section>
       </div>
     );
