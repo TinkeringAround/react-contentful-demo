@@ -6,9 +6,9 @@ const RichText = (props) => {
 
   if(props.richtext) {
     paragraphs = props.richtext.content.map((paragraph) => {
-
+      const content = documentToHtmlString(paragraph);
       return(
-        <p>{documentToHtmlString(paragraph)}</p>
+        <p key={content}>{content}</p>
       )
     });
   }

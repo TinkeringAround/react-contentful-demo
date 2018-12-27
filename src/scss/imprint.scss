@@ -12,7 +12,7 @@
   padding: 40px 0;
   text-align: center;
   color: white;
-  background-color: rgb(19, 147, 233);
+  background-color: rgb(0, 143, 213);
 }
 
 #imprint .header h1 {
@@ -26,18 +26,18 @@
 }
 
 /* Intro Text */
-#intro {
+#imprint .intro {
   width: 50%;
   margin: 0 auto 10px auto;
 }
 
-#intro h1 {
+#imprint .intro h1 {
   font-family: "VW Headline OT", "Arial", sans-serif;
   font-size: 28px;
   margin-bottom: 10px;
 }
 
-#intro p {
+#imprint .intro p {
   font-size: 14px;
 }
 

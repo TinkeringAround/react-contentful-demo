@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "scss/App.scss";
 
 //import my own modules
-import Imprint from "./components/imprint";
-import FAQ from "./components/faq";
-import Home from "./components/home";
-
-import "./scss/App.scss";
+import Imprint from "components/views/Imprint";
+import FAQ from "components/views/Faq";
+import Home from "components/views/Home";
+import Navbar from "components/Navbar";
 
 const contentful = require("contentful");
 
 const client = contentful.createClient({
-  space: "pntshaoi0gaf",
-  accessToken:
-    "0c5358d8334cd3f6fc85ff1eae5cb6c4689d1b1f9db29177d783286480d7fd46"
+  space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.REACT_APP_CONTENTFUL_API_KEY
 });
 
 class App extends Component {
@@ -21,47 +20,10 @@ class App extends Component {
     return (
       <Router>
         <div id="app">
-          <aside className="sidebar">
-            <nav>
-              <ul className="navigation">
-                <li>
-                  <img
-                    src="https://images.ctfassets.net/pntshaoi0gaf/5A5oxIWjluIcga8QQUiCuc/fd8489b85b84bbfc822b93e1d99ffb2d/VWLogo.png"
-                    alt="VW Logo"
-                    width="60px"
-                    height="60px"
-                  />
-                </li>
+          <Navbar />
 
-                <li>
-                  <Link to="/">
-                    <i className="fas fa-home fa-2x" />
-                    <br />
-                    Start
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/faq">
-                    <span className="fas fa-question-circle fa-2x" />
-                    <br />
-                    FAQ
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/imprint/de">
-                    <span className="fas fa-info-circle fa-2x" />
-                    <br />
-                    Impressum
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </aside>
-
-          <div id="main-content">
-            <Route exact path="/" render={props => <Home />} />
+          <Switch id="main-content">
+            <Route exact path="/" component={Home} />
 
             <Route
               exact
@@ -70,12 +32,17 @@ class App extends Component {
             />
 
             <Route
+              exact
               path="/imprint/en"
               render={props => <Imprint contentful={client} locale="en-GB" />}
             />
-            
-            <Route path="/faq" render={props => <FAQ contentful={client} />} />
-          </div>
+
+            <Route
+              exact
+              path="/faq"
+              render={props => <FAQ contentful={client} locale="de-DE" />}
+            />
+          </Switch>
         </div>
       </Router>
     );

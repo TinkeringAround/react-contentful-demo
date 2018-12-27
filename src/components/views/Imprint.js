@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import Section from "./block";
-import RichText from "./richtext";
+import "scss/Imprint.scss";
 
-import "../scss/imprint.scss";
+import Section from "components/Block";
+import RichText from "components/Richtext";
+import Spinner from "components/Spinner";
 
 class Imprint extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      entry: ""
-    };
-  }
+  state = {
+    entry: ""
+  };
 
   componentDidMount() {
     this.props.contentful
@@ -32,6 +29,7 @@ class Imprint extends Component {
   renderSections() {
     const sections = this.state.entry.sections.map(section => (
       <Section
+        key={section.sys.id}
         header={section.fields["header"]}
         content={section.fields["content"]}
       />
@@ -45,23 +43,25 @@ class Imprint extends Component {
 
     if (this.state.entry !== "") {
       sections = this.renderSections();
+
+      return (
+        <div id="imprint">
+          <header className="header">
+            <h1>{this.state.entry.title}</h1>
+          </header>
+          
+          <section className="content">
+            <header className="intro">
+              <h1>{this.state.entry.header}</h1>
+              <RichText richtext={this.state.entry.intro} />
+            </header>
+            {sections}
+          </section>
+        </div>
+      );
+    } else {
+      return <Spinner />;
     }
-
-    return (
-      <div id="imprint">
-        <header className="header">
-          <h1>{this.state.entry.title}</h1>
-        </header>
-
-        <section className="content">
-          <article id="intro">
-            <h1>{this.state.entry.header}</h1>
-            <RichText richtext={this.state.entry.intro} />
-          </article>
-          {sections}
-        </section>
-      </div>
-    );
   }
 }
 

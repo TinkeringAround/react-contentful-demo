@@ -1,0 +1,88 @@
+/* Global */
+#faq {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  font-size: 14px;
+
+  li {
+    display: inline;
+    margin-right: 18px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+
+  .header {
+    flex: 1;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 143, 213);
+
+    h1 {
+      font-family: "VW Headline OT Black", "Arial", sans-serif;
+      font-size: 32px;
+    }
+  }
+
+  nav {
+    flex: 1;
+  }
+
+  .main-navbar {
+    a {
+      color: rgb(117, 125, 133);
+    }
+
+    ul {
+      width: 50%;
+      margin: 18px auto;
+    }
+  }
+
+  .sub-navbar {
+    a {
+      color: rgb(42, 47, 49);
+    }
+
+    ul {
+      width: 50%;
+      margin: 12px auto;
+    }
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .intro {
+    width: 50%;
+    margin: 0 auto 10px auto;
+
+    h1 {
+      font-family: "VW Headline OT", "Arial", sans-serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .has-text-white {
+    color: white;
+  }
+
+  .has-background-dark {
+    background-color: rgb(42, 47, 49);
+  }
+
+  .has-background-grey {
+    background-color: rgb(117, 125, 133);
+  }
+}
+
+/* Navigation */
