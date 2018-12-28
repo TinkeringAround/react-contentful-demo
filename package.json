@@ -3,6 +3,9 @@
   "description": "React app with data from Contentful CMS",
   "version": "1.0.0",
   "private": true,
+  "engines": { 
+    "node": "11.4.0"
+  },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^12.1.2",
     "contentful": "^7.0.5",
