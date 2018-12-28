@@ -1,9 +1,6 @@
 # react-contentful-demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is a boilerplate for quickly setup a running React environment with Bulma CSS Framework.
-
-## [Bulma](https://bulma.io )
-**Bulma**  is a free, open source CSS framework based on  **Flexbox**  and used by more than  **100,000**  developers.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is a boilerplate for quickly setup a running React environment.
 
 ## Available Scripts
 In the project directory, you can run:
@@ -38,5 +35,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-![enter image description here](https://bulma.io/images/made-with-bulma--black.png)
