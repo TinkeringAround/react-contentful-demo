@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import "scss/Faq.scss";
 
 import Spinner from "components/Spinner";
@@ -36,23 +37,23 @@ class FAQ extends Component {
 
           <nav className="main-navbar has-background-dark">
             <ul>
-              <li><a href="#">Tipps und Tricks</a></li>
-              <li><a href="#">Generell</a></li>
+              <li><Link to="/faq">Tipps und Tricks</Link></li>
+              <li><Link to="/faq">Generell</Link></li>
               <li className="has-text-white">Vertrag</li>
-              <li><a href="#">Guide und Inform</a></li>
-              <li><a href="#">Security und Service</a></li>
-              <li><a href="#">e-Remote</a></li>
+              <li><Link to="/faq">Guide und Inform</Link></li>
+              <li><Link to="/faq">Security und Service</Link></li>
+              <li><Link to="/faq">e-Remote</Link></li>
             </ul>
           </nav>
 
           <nav className="sub-navbar has-background-grey">
             <ul>
-              <li><a href="#">Aktivierung der Dienste</a></li>
-              <li><a href="#">Bestehende Verträge</a></li>
+              <li><Link to="/faq">Aktivierung der Dienste</Link></li>
+              <li><Link to="/faq">Bestehende Verträge</Link></li>
               <li className="has-text-white">Bezahlung</li>
-              <li><a href="#">Übertragung/Verkauf</a></li>
-              <li><a href="#">Verlängerung/Bestellung</a></li>
-              <li><a href="#">Vertragslaufzeit/-ende</a></li>
+              <li><Link to="/faq">Übertragung/Verkauf</Link></li>
+              <li><Link to="/faq">Verlängerung/Bestellung</Link></li>
+              <li><Link to="/faq">Vertragslaufzeit/-ende</Link></li>
             </ul>
           </nav>
 

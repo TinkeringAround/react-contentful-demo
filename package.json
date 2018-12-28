@@ -1,11 +1,10 @@
 {
-  "name": "react-with-bulma",
-  "description": "Boilerplate Setup for React-with-Bulma",
+  "name": "react-contentful-demo",
+  "description": "React app with data from Contentful CMS",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^12.1.2",
-    "bulma": "^0.7.2",
     "contentful": "^7.0.5",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",

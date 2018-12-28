@@ -1,61 +1,58 @@
-/* Global */
 #imprint {
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
   font-size: 14px;
-}
 
-/* header */
-#imprint .header {
-  flex: 1;
-  padding: 40px 0;
-  text-align: center;
-  color: white;
-  background-color: rgb(0, 143, 213);
-}
+  .header {
+    flex: 1;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 143, 213);
 
-#imprint .header h1 {
-  font-family: "VW Headline OT Black", "Arial", sans-serif;
-  font-size: 32px;
-}
+    h1 {
+      font-family: "VW Headline OT Black", "Arial", sans-serif;
+      font-size: 32px;
+    }
+  }
 
-/* content */
-#imprint .content {
-  flex: 1;
-}
+  /* content */
+  .content {
+    flex: 1;
+  }
 
-/* Intro Text */
-#imprint .intro {
-  width: 50%;
-  margin: 0 auto 10px auto;
-}
+  .intro {
+    width: 50%;
+    margin: 0 auto 10px auto;
 
-#imprint .intro h1 {
-  font-family: "VW Headline OT", "Arial", sans-serif;
-  font-size: 28px;
-  margin-bottom: 10px;
-}
+    h1 {
+      font-family: "VW Headline OT", "Arial", sans-serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-#imprint .intro p {
-  font-size: 14px;
-}
+    p {
+      font-size: 14px;
+    }
+  }
 
-/* Sections - contentBlock */
-#imprint .block {
-  width: 50%;
-  margin: 25px auto 0 auto;
-}
+  /* Sections - Block Elements */
+  .block {
+    width: 50%;
+    margin: 25px auto 0 auto;
 
-#imprint .block h2 {
-  font-family: "VW Headline OT", "Arial", sans-serif;
-  font-size: 15px;
-  margin-top: 40px;
-  margin-bottom: 5px;
-  line-height: 0.5;
-}
+    h2 {
+      font-family: "VW Headline OT", "Arial", sans-serif;
+      font-size: 15px;
+      margin-top: 40px;
+      margin-bottom: 5px;
+      line-height: 0.5;
+    }
 
-#imprint .block p {
-  font-size: 14px;
-  margin: 0;
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
 }
