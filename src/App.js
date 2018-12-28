@@ -22,7 +22,7 @@ class App extends Component {
         <div id="app">
           <Navbar />
 
-          <Switch id="main-content">
+          <Switch className="content">
             <Route exact path="/" component={Home} />
 
             <Route

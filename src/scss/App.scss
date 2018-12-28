@@ -1,6 +1,9 @@
-/* App */
-.main-content {
-  display: grid;
-  grid-template-columns: 5vw auto;
-  grid-template-rows: 100vh 100vh;
+#app {
+  Switch {
+    .content {
+      display: grid;
+      grid-template-columns: 5vw auto;
+      grid-template-rows: 100vh 100vh;
+    }
+  }
 }
