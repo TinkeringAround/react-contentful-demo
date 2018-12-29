@@ -56,3 +56,19 @@
     }
   }
 }
+
+
+@media screen and (max-width: 960px) {
+  #imprint {
+    .block, .intro {
+      width: 80%;
+      margin: 25px auto 0 auto;
+    }
+
+    .intro {
+      h1 {
+        font-size:25px;
+      }
+    }
+  }
+}

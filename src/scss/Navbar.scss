@@ -1,44 +1,121 @@
 .sidebar {
-    position: fixed;
-    width: 100px;
-    height: 100vh;
-  
-    -webkit-box-shadow: 4px 0px 37px 24px rgba(109, 109, 109, 0.3);
-    box-shadow: 4px 0px 37px 5px rgba(109, 109, 109, 0.3);
+  position: fixed;
+  width: 100px;
+  height: 100vh;
+
+  -webkit-box-shadow: 4px 0px 37px 24px rgba(109, 109, 109, 0.3);
+  box-shadow: 4px 0px 37px 5px rgba(109, 109, 109, 0.3);
+}
+
+.mobile-header {
+  display: none;
+}
+
+/* navigation */
+.navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation li {
+  font-family: "VW Headline OT", "Arial", sans-serif;
+  font-size: 18px;
+  text-align: center;
+
+  color: grey;
+  background-color: white;
+  border-bottom: 1px #e0e0e0 solid;
+
+  padding: 30px 0;
+}
+
+.navigation a {
+  color: grey;
+  text-decoration: none;
+}
+
+.navigation a:visited {
+  color: grey;
+}
+
+.navigation a:hover {
+  color: rgb(19, 147, 233);
+}
+
+.navigation a:active {
+  color: rgb(19, 147, 233);
+}
+
+@media screen and (max-width: 960px) {
+  aside {
+    display: none;
   }
-  
-  /* navigation */
-  .navigation {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+
+  .mobile-header {
+    display: flex;
   }
-  
-  .navigation li {
-    font-family: "VW Headline OT", "Arial", sans-serif;
-    font-size: 18px;
-    text-align: center;
-  
-    color: grey;
+
+  .mobile-menu {
+    flex: 1;
+    height: 50px;
     background-color: white;
-    border-bottom: 1px #e0e0e0 solid;
-  
-    padding: 30px 0;
+
+    display: grid;
+    grid-template-columns: 15vw 70vw 15vw;
+    grid-template-rows: 100vh 100vh 100vh;
+    grid-template-areas: "logo text home";
+
+    .mobile-menu-logo {
+      grid-area: logo;
+
+      display: flex;
+      justify-content: center;
+
+      margin: 10px 0 0 0;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .mobile-menu-text {
+      grid-area: text;
+
+      display: flex;
+      justify-content: flex-start;
+
+      h1 {
+        font-family: "VW Headline OT", "Arial", sans-serif;
+        margin-left: 5px;
+        font-size: 16px;
+      }
+    }
+
+    .mobile-menu-home {
+      grid-area: home;
+
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+
+      a {
+        color: grey;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: grey;
+      }
+
+      a:hover {
+        color: rgb(19, 147, 233);
+      }
+
+      a:active {
+        color: grey;
+      }
+    }
   }
-  
-  .navigation a {
-      color: grey;
-      text-decoration: none;
-  }
-  
-  .navigation a:visited {
-    color: grey;
-  }
-  
-  .navigation a:hover {
-    color: rgb(19, 147, 233);
-  }
-  
-  .navigation a:active {
-    color: rgb(19, 147, 233);
-  }
+}
