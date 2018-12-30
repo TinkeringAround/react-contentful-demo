@@ -39,7 +39,7 @@ class App extends Component {
 
             <Route
               exact
-              path="/faq"
+              path="/faq/de"
               render={props => <FAQ contentful={client} locale="de-DE" />}
             />
           </Switch>

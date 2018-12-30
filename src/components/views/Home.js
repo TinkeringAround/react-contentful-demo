@@ -32,7 +32,7 @@ const Home = props => {
 
       <div className="faq">
         <h1>FAQ</h1>
-        <Link to="/faq">
+        <Link to="/faq/de">
           <img
             src="https://images.ctfassets.net/pntshaoi0gaf/50H9dCRBQQOUqQ4WCOAia6/4de54e93504822b023f8b76c01d7816c/germany-flag.png"
             alt="Germany Flag"

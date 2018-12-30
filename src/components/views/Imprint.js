@@ -17,8 +17,17 @@ class Imprint extends Component {
         locale: this.props.locale
       })
       .then(entries => {
+        const renderedSections = entries.sections.map(section => (
+          <Section
+            key={section.sys.id}
+            header={section.fields["header"]}
+            content={section.fields["content"]}
+          />
+        ));
+
         this.setState({
-          entry: entries.items[0].fields
+          entry: entries.items[0].fields,
+          sections: renderedSections
         });
       })
       .catch(error => {
@@ -26,24 +35,8 @@ class Imprint extends Component {
       });
   }
 
-  renderSections() {
-    const sections = this.state.entry.sections.map(section => (
-      <Section
-        key={section.sys.id}
-        header={section.fields["header"]}
-        content={section.fields["content"]}
-      />
-    ));
-
-    return sections;
-  }
-
   render() {
-    var sections = "";
-
     if (this.state.entry !== "") {
-      sections = this.renderSections();
-
       return (
         <div id="imprint">
           <header className="header">
@@ -55,7 +48,7 @@ class Imprint extends Component {
               <h1>{this.state.entry.header}</h1>
               <RichText richtext={this.state.entry.intro} />
             </header>
-            {sections}
+            {this.state.sections}
           </section>
         </div>
       );

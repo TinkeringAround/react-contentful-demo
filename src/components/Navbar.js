@@ -48,7 +48,7 @@ class Navbar extends Component {
               </li>
 
               <li>
-                <Link to="/faq">
+                <Link to="/faq/de">
                   <i className="fas fa-question-circle fa-2x" />
                   <br />
                   FAQ
