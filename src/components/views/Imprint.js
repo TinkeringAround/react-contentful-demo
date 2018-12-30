@@ -18,7 +18,7 @@ class Imprint extends Component {
         locale: this.props.locale
       })
       .then(entries => {
-        const renderedSections = entries.sections.map(section => (
+        const renderedSections = entries.items[0].fields['sections'].map(section => (
           <Section
             key={section.sys.id}
             header={section.fields["header"]}
