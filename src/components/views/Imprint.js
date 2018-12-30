@@ -7,7 +7,8 @@ import Spinner from "components/Spinner";
 
 class Imprint extends Component {
   state = {
-    entry: ""
+    entry: "",
+    sections: ""
   };
 
   componentDidMount() {
