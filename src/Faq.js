@@ -4,7 +4,7 @@ import "./styles/faq.scss";
 
 import Spinner from "./components/Spinner";
 import Section from "./components/Question";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 
 class FAQ extends Component {
   state = {
