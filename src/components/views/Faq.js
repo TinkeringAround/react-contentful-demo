@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "scss/Faq.scss";
+import "./../../scss/Faq.scss";
 
-import Spinner from "components/Spinner";
-import Section from "components/Question";
+import Spinner from "./../Spinner";
+import Section from "./../Question";
 
 class FAQ extends Component {
   state = {
@@ -53,28 +53,28 @@ class FAQ extends Component {
           <nav className="main-navbar has-background-dark">
             <ul>
               <li className="desktop-hidden tablet-hidden">
-                <Link to="faq">
+                <Link to="#">
                   <i className="fas fa-angle-left" />
                 </Link>
               </li>
               <li className="mobile-hidden">
-                <Link to="/faq">Tipps &amp; Tricks</Link>
+                <Link to="#">Tipps &amp; Tricks</Link>
               </li>
               <li className="mobile-hidden">
-                <Link to="/faq">Generell</Link>
+                <Link to="#">Generell</Link>
               </li>
               <li className="has-text-white">Vertrag</li>
               <li>
-                <Link to="/faq">Guide &amp; Inform</Link>
+                <Link to="#">Guide &amp; Inform</Link>
               </li>
               <li>
-                <Link to="/faq">Security &amp; Service</Link>
+                <Link to="#">Security &amp; Service</Link>
               </li>
               <li className="mobile-hidden">
-                <Link to="/faq">e-Remote</Link>
+                <Link to="#">e-Remote</Link>
               </li>
               <li className="desktop-hidden tablet-hidden no-margin-right">
-                <Link to="faq">
+                <Link to="#">
                   <i className="fas fa-angle-right" />
                 </Link>
               </li>
@@ -84,28 +84,28 @@ class FAQ extends Component {
           <nav className="sub-navbar has-background-grey">
             <ul>
               <li className="desktop-hidden">
-                <Link to="faq">
+                <Link to="#">
                   <i className="fas fa-angle-left" />
                 </Link>
               </li>
               <li className="mobile-hidden tablet-hidden">
-                <Link to="/faq">Aktivierung der Dienste</Link>
+                <Link to="#">Aktivierung der Dienste</Link>
               </li>
               <li className="mobile-hidden">
-                <Link to="/faq">Bestehende Verträge</Link>
+                <Link to="#">Bestehende Verträge</Link>
               </li>
               <li className="has-text-white">Bezahlung</li>
               <li>
-                <Link to="/faq">Übertragung/Verkauf</Link>
+                <Link to="#">Übertragung/Verkauf</Link>
               </li>
               <li className="mobile-hidden">
-                <Link to="/faq">Verlängerung/Bestellung</Link>
+                <Link to="#">Verlängerung/Bestellung</Link>
               </li>
               <li className="mobile-hidden tablet-hidden">
-                <Link to="/faq">Vertragslaufzeit/-ende</Link>
+                <Link to="#">Vertragslaufzeit/-ende</Link>
               </li>
               <li className="desktop-hidden no-margin-right">
-                <Link to="faq">
+                <Link to="#">
                   <i className="fas fa-angle-right" />
                 </Link>
               </li>

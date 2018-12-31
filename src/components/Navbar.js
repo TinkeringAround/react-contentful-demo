@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import "scss/Navbar.scss";
+import "./../scss/Navbar.scss";
 
 class Navbar extends Component {
   state = {};
@@ -21,7 +21,7 @@ class Navbar extends Component {
             <div className="mobile-menu-text"><h1>VW Contentful App</h1></div>
             <div className="mobile-menu-home">
               <Link to="/">
-                <i class="fas fa-bars fa-2x" />
+                <i className="fas fa-bars fa-2x" />
               </Link>
             </div>
           </nav>
