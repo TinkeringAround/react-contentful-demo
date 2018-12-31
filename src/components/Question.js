@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import RichText from "./components/Richtext";
+import RichText from "./Richtext";
 
 class Question extends Component {
   constructor(props) {

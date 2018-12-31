@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./styles/faq.scss";
 
-import Spinner from "./Spinner";
-import Section from "./Question";
+import Spinner from "./components/Spinner";
+import Section from "./components/Question";
 import Footer from "./Footer";
 
 class FAQ extends Component {

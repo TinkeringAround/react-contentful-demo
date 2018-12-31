@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./styles/imprint.scss";
 
-import Section from "./Block";
+import Section from "./components/Block";
 import RichText from "./components/Richtext";
-import Spinner from "./Spinner";
+import Spinner from "./components/Spinner";
 import Footer from "./Footer";
 
 class Imprint extends Component {

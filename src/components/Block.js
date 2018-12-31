@@ -1,5 +1,5 @@
 import React from "react";
-import RichText from "./components/Richtext";
+import RichText from "./Richtext";
 
 const Block = props => {
   return (
