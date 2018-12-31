@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./styles/imprint.scss";
+import "../styles/imprint.scss";
 
-import Section from "./components/Block";
-import RichText from "./components/Richtext";
-import Spinner from "./components/Spinner";
-import Footer from "./components/Footer";
+import Section from "../components/Block";
+import RichText from "../components/Richtext";
+import Spinner from "../components/Spinner";
+import Footer from "../components/Footer";
 
 class Imprint extends Component {
   state = {

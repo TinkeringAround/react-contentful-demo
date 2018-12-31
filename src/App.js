@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./styles/app.scss";
 
-import Imprint from "./Imprint";
-import FAQ from "./Faq";
-import Home from "./Home";
-import Navbar from "./Navbar";
+import Imprint from "./views/Imprint";
+import FAQ from "./views/Faq";
+import Home from "./views/Home";
+import Navbar from "./views/Navbar";
 
 const contentful = require("contentful");
 const config = {
