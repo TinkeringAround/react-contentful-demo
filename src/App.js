@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./scss/App.scss";
+import "./scss/app.scss";
 
 import Imprint from "./components/views/Imprint";
 import FAQ from "./components/views/Faq";

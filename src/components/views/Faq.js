@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./../../scss/Faq.scss";
+import "./../../scss/faq.scss";
 
 import Spinner from "./../Spinner";
 import Section from "./../Question";

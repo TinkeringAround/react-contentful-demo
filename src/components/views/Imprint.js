@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./../../scss/Imprint.scss";
+import "./../../scss/imprint.scss";
 
 import Section from "./../Block";
 import RichText from "./../Richtext";
@@ -11,20 +11,22 @@ class Imprint extends Component {
     sections: ""
   };
 
-  componentDidMount() {
+  fetchData() {
     this.props.contentful
       .getEntries({
         content_type: "impressum",
         locale: this.props.locale
       })
       .then(entries => {
-        const renderedSections = entries.items[0].fields['sections'].map(section => (
-          <Section
-            key={section.sys.id}
-            header={section.fields["header"]}
-            content={section.fields["content"]}
-          />
-        ));
+        const renderedSections = entries.items[0].fields["sections"].map(
+          section => (
+            <Section
+              key={section.sys.id}
+              header={section.fields["header"]}
+              content={section.fields["content"]}
+            />
+          )
+        );
 
         this.setState({
           entry: entries.items[0].fields,
@@ -36,6 +38,15 @@ class Imprint extends Component {
       });
   }
 
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.props = newProps;
+    this.fetchData();
+  }
+
   render() {
     if (this.state.entry !== "") {
       return (
@@ -43,7 +54,7 @@ class Imprint extends Component {
           <header className="header">
             <h1>{this.state.entry.title}</h1>
           </header>
-          
+
           <section className="content">
             <header className="intro">
               <h1>{this.state.entry.header}</h1>
