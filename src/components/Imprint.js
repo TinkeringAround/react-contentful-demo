@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "./../../scss/imprint.scss";
+import "./../scss/imprint.scss";
 
-import Section from "./../Block";
-import RichText from "./../Richtext";
-import Spinner from "./../Spinner";
+import Section from "./Block";
+import RichText from "./Richtext";
+import Spinner from "./Spinner";
+import Footer from "./Footer";
 
 class Imprint extends Component {
   state = {
@@ -62,6 +63,8 @@ class Imprint extends Component {
             </header>
             {this.state.sections}
           </section>
+
+          <Footer />
         </div>
       );
     } else {

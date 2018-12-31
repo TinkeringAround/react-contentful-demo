@@ -18,7 +18,9 @@ class Navbar extends Component {
                 height="32px"
               />
             </figure>
-            <div className="mobile-menu-text"><h1>VW Contentful App</h1></div>
+            <div className="mobile-menu-text">
+              <h1>VW Contentful App</h1>
+            </div>
             <div className="mobile-menu-home">
               <Link to="/">
                 <i className="fas fa-bars fa-2x" />

@@ -5,8 +5,9 @@
 /.pnp
 .pnp.js
 
-# build
+# deploy
 /build
+.env
 
 # testing
 /coverage

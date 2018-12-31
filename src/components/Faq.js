@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./../../scss/faq.scss";
+import "./../scss/faq.scss";
 
-import Spinner from "./../Spinner";
-import Section from "./../Question";
+import Spinner from "./Spinner";
+import Section from "./Question";
+import Footer from "./Footer";
 
 class FAQ extends Component {
   state = {
@@ -132,8 +133,11 @@ class FAQ extends Component {
                   sich nach dem jeweiligen Tarif bei Ihrem Anbieter. Bei Anrufen
                   aus dem Ausland können Roaming-Gebühren anfallen.
                 </p>
-                <h5>Rund um die Uhr, 7 Tage die Woche</h5>
+                <p>
+                  <strong>Rund um die Uhr, 7 Tage die Woche</strong>
+                </p>
               </div>
+
               <div className="byFormular">
                 <i className="fas fa-envelope fa-5x" />
                 <h1> </h1>
@@ -141,12 +145,12 @@ class FAQ extends Component {
                   Hier können Sie schriftliche Anfragen an unsere
                   Kundenbetreuung richten:
                 </p>
-                <button>
-                  Zum Kontaktformular
-                </button>
+                <button>Zum Kontaktformular</button>
               </div>
             </div>
           </section>
+
+          <Footer />
         </div>
       );
     } else {

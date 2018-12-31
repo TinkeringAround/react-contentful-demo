@@ -1,7 +1,8 @@
 #imprint {
+  grid-area: content;
+
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
   font-size: 14px;
 
   .header {
@@ -20,6 +21,8 @@
   /* content */
   .content {
     flex: 1;
+
+    margin-bottom: 30px;
   }
 
   .intro {

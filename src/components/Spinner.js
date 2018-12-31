@@ -1,13 +1,17 @@
-import React from 'react';
-import spinner from './../images/spinner.gif';
+import React from "react";
+import spinner from "./../images/spinner.gif";
 
 export default () => {
   return (
-    <div>
+    <div style={{
+      gridArea: "content",
+      margin: "40px auto",
+    }}>
       <img
         src={spinner}
         alt="Loading..."
-        style={{ width: '200px', margin: ' 40px auto', display: 'block' }}
+        style={{ 
+          display: "block" }}
       />
     </div>
   );
