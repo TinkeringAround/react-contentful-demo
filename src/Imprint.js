@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./styles/imprint.scss";
 
 import Section from "./Block";
-import RichText from "./Richtext";
+import RichText from "./components/Richtext";
 import Spinner from "./Spinner";
 import Footer from "./Footer";
 
