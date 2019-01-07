@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import "./../styles/navbar.scss";
 
-class Navbar extends Component {
-  state = {};
-  render() {
+export default () => {
     return (
       <React.Fragment>
         <header className="mobile-header">
@@ -69,7 +67,4 @@ class Navbar extends Component {
         </aside>
       </React.Fragment>
     );
-  }
 }
-
-export default Navbar;

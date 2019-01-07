@@ -1,21 +1,12 @@
-import React from 'react';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import React from "react";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-const RichText = (props) => {
-  var paragraphs = "";
-
-  if(props.richtext) {
-    paragraphs = props.richtext.content.map((paragraph) => {
-      const content = documentToHtmlString(paragraph);
-      return(
-        <p key={content}>{content}</p>
-      )
-    });
-  }
-
-  return(
-    paragraphs
-  );
-}
+const RichText = props => {
+  return props.richtext
+    ? props.richtext.content.map((paragraph, index) => {
+        return <p key={index}>{documentToHtmlString(paragraph)}</p>;
+      })
+    : "";
+};
 
 export default RichText;

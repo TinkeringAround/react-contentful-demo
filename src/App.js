@@ -11,7 +11,7 @@ const contentful = require("contentful");
 const config = {
   space: process.env.REACT_APP_CONTENTFUL_SPACE,
   api: process.env.REACT_APP_CONTENTFUL_API_KEY
-}
+};
 
 const client = contentful.createClient({
   space: config.space,
@@ -27,19 +27,16 @@ class App extends Component {
 
           <Switch className="content">
             <Route exact path="/" component={Home} />
-
             <Route
               exact
               path="/imprint/de"
               render={props => <Imprint contentful={client} locale="de-DE" />}
             />
-
             <Route
               exact
               path="/imprint/en"
               render={props => <Imprint contentful={client} locale="en-GB" />}
             />
-
             <Route
               exact
               path="/faq/de"

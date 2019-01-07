@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import RichText from "./Richtext";
 
 class Question extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false
-    };
-  }
+  state = {
+    active: false
+  };
 
   toggleState() {
     this.setState({ active: this.state.active ? false : true });
