@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/imprint/*"
+  to = "/"
+
+[[redirects]]
+  from = "/faq"
+  to = "/"
+
+[[redirects]]
+  from = "/agb"
+  to = "/"

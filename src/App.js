@@ -27,6 +27,7 @@ class App extends Component {
 
           <Switch className="content">
             <Route exact path="/" component={Home} />
+
             <Route
               exact
               path="/imprint/de"
