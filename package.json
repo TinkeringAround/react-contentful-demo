@@ -3,6 +3,7 @@
   "description": "React app with data from Contentful CMS",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://vw-contentful-demo.netlify.com/",
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^12.1.2",
     "contentful": "^7.0.5",
