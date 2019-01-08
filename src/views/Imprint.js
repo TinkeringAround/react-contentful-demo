@@ -9,7 +9,8 @@ import Footer from "../components/Footer";
 class Imprint extends Component {
   state = {
     entry: "",
-    sections: ""
+    sections: "",
+    modus: "desktop"
   };
 
   fetchData() {
@@ -48,25 +49,41 @@ class Imprint extends Component {
     this.fetchData();
   }
 
+  toggle() {
+    this.setState({
+      modus: this.state.modus === "desktop" ? "car" : "desktop"
+    });
+  }
+
   render() {
-    if (this.state.entry !== "") {
-      return (
-        <div id="imprint">
-          <header className="header">
-            <h1>{this.state.entry.title}</h1>
-          </header>
+    if (this.state.hasOwnProperty("entry")) {
+      const { title, header, intro } = this.state.entry;
 
-          <section className="content">
-            <header className="intro">
-              <h1>{this.state.entry.header}</h1>
-              <RichText richtext={this.state.entry.intro} />
+      if (this.state.modus === "desktop") {
+        return (
+          <div id="imprint">
+            <header className="header">
+              <h1>{title}</h1>
             </header>
-            {this.state.sections}
-          </section>
 
-          <Footer />
-        </div>
-      );
+            <section className="content">
+              <header className="intro">
+                <h1>{header}</h1>
+                <RichText richtext={intro} />
+              </header>
+              {this.state.sections}
+            </section>
+
+            <Footer toggle={this.toggle.bind(this)} icon={this.state.modus} />
+          </div>
+        );
+      } else {
+        return (
+          <div id="imprint">
+            <Footer toggle={this.toggle.bind(this)} icon={this.state.modus} />
+          </div>
+        );
+      }
     } else {
       return <Spinner />;
     }
