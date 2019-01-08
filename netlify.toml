@@ -1,7 +1,10 @@
 [[redirects]]
-  from = "/imprint/*"
+  from = "/*"
   to = "/"
 
+[[redirects]]
+  from = "/imprint/*"
+  to = "/"
 
 [[redirects]]
   from = "/faq/*"
