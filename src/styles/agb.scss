@@ -1,0 +1,205 @@
+#agb {
+  grid-area: content;
+
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+
+  .header {
+    flex: 1;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 143, 213);
+
+    h1 {
+      font-family: "VW Headline OT Black", "Arial", sans-serif;
+      font-size: 32px;
+    }
+  }
+
+  nav {
+    flex: 1;
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: white;
+    }
+  }
+
+  .main-navbar {
+    a {
+      color: rgb(117, 125, 133);
+    }
+
+    ul {
+      width: 62%;
+      margin: 18px auto;
+
+      li {
+        display: inline;
+        margin-right: 18px;
+      }
+
+      .is-mobile {
+        display: none;
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+
+    margin-bottom: 30px;
+  }
+
+  .intro {
+    width: 60%;
+    margin: 0 auto 10px auto;
+
+    h1 {
+      font-family: "VW Headline OT", "Arial", sans-serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .block {
+    width: 60%;
+    margin: 25px auto 0 auto;
+
+    h2 {
+      font-family: "VW Headline OT", "Arial", sans-serif;
+      font-size: 25px;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    ul {
+      margin: 0 0 15px 0;
+
+      li {
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .has-text-white {
+    color: white;
+  }
+
+  .has-background-dark {
+    background-color: rgb(42, 47, 49);
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  #agb {
+    .main-navbar {
+      ul {
+        width: 80%;
+      }
+    }
+
+    .content {
+      .intro {
+        width: 77%;
+      }
+
+      .block {
+        width: 77%;
+      }
+
+      .info {
+        width: 77%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #agb {
+    .intro {
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    .main-navbar {
+      display: flex;
+
+      ul {
+        flex: 1;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        margin: 18px 0;
+        padding: 0;
+      }
+    }
+
+    .content {
+      .intro {
+        width: 80%;
+      }
+
+      .block {
+        width: 80%;
+        margin-top: 0;
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #agb {
+    .main-navbar {
+      ul {
+        .is-mobile {
+          display: inline;
+        }
+
+        .is-mobile-hidden {
+          display: none;
+        }
+      }
+    }
+
+    .content {
+      .block {
+        h2 {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #agb {
+    .main-navbar {
+      ul {
+        .is-mobile-320-hidden {
+          display: none;
+        }
+      }
+    }
+  }
+}

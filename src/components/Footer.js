@@ -1,25 +1,49 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./../styles/footer.scss";
 
 const Footer = props => {
-  let iconButton = "";
+  let modusButton,
+    localeButton = "";
 
-  if (props.hasOwnProperty('icon')) {
-    iconButton = (
-      <React.Fragment>
-        <button onClick={props.toggle} className="icon-button">
-          <i className={"fas fa-" + props.icon + " fa-2x"} />
-        </button>
-        <p className="toggleText">Umschalten</p>
-      </React.Fragment>
+  const flags = {
+    germanSrc:
+      "https://images.ctfassets.net/pntshaoi0gaf/50H9dCRBQQOUqQ4WCOAia6/4de54e93504822b023f8b76c01d7816c/germany-flag.png",
+    germanAlt: "German Flag",
+    britischSrc:
+      "https://images.ctfassets.net/pntshaoi0gaf/50H9dCRBQQOUqQ4WCOAia6/7c721bd5184ea2c6960af294d51f58d4/united-kingdom-flag.png",
+    britischAlt: "Britisch Flag"
+  };
+
+  if (props.hasOwnProperty("icon")) {
+    modusButton = (
+      <button onClick={props.toggleModus} className="modus">
+        <i className={"fas fa-" + props.icon + " fa-2x"} />
+      </button>
+    );
+  }
+
+  if (props.hasOwnProperty("path")) {
+    localeButton = (
+      <Link to={props.path} className="locale">
+        <img
+          src={
+            props.path.includes("/en") ? flags.germanSrc : flags.britischSrc
+          }
+          alt={
+            props.path.includes("/en") ? flags.germanAlt : flags.britischAlt
+          }
+        />
+      </Link>
     );
   }
 
   return (
     <footer>
-      {iconButton}
-      <p className="upText">Nach oben</p>
-      <button className="up-button">
+      {localeButton}
+      {modusButton}
+      <p className="text">Nach oben</p>
+      <button className="dummy">
         <i className="fas fa-angle-double-up" />
       </button>
     </footer>

@@ -344,36 +344,6 @@
       margin: 25px auto 0 auto;
     }
 
-    .main-navbar {
-      display: flex;
-
-      ul {
-        flex: 1;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-        margin: 18px 0;
-        padding: 0;
-      }
-    }
-
-    .sub-navbar {
-      display: flex;
-
-      ul {
-        flex: 1;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-        margin: 12px 0;
-        padding: 0;
-      }
-    }
-
     .desktop-hidden {
       display: inline;
     }
@@ -419,6 +389,14 @@
           height: 250px;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #faq {
+    .is-mobile-320-hidden {
+      display: none;
     }
   }
 }

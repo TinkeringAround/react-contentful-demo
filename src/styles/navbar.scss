@@ -21,7 +21,6 @@
       font-size: 18px;
       text-align: center;
 
-      color: grey;
       background-color: white;
       border-bottom: 1px #e0e0e0 solid;
 
@@ -30,18 +29,18 @@
       a {
         color: grey;
         text-decoration: none;
-      }
 
-      a:visited {
-        color: grey;
-      }
+        :visited {
+          color: grey;
+        }
 
-      a:hover {
-        color: rgb(19, 147, 233);
-      }
+        :hover {
+          color: rgb(19, 147, 233);
+        }
 
-      a:active {
-        color: rgb(19, 147, 233);
+        :active {
+          color: rgb(19, 147, 233);
+        }
       }
     }
   }
@@ -103,18 +102,18 @@
         a {
           color: grey;
           text-decoration: none;
-        }
 
-        a:visited {
-          color: grey;
-        }
+          :visited {
+            color: grey;
+          }
 
-        a:hover {
-          color: rgb(19, 147, 233);
-        }
+          :hover {
+            color: rgb(19, 147, 233);
+          }
 
-        a:active {
-          color: grey;
+          active {
+            color: rgb(19, 147, 233);
+          }
         }
       }
     }

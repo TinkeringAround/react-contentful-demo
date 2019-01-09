@@ -16,27 +16,21 @@ const Home = props => {
       <div className="imprint">
         <h1>Impressum</h1>
         <Link to="/imprint/de">
-          <img
-            src="https://images.ctfassets.net/pntshaoi0gaf/50H9dCRBQQOUqQ4WCOAia6/4de54e93504822b023f8b76c01d7816c/germany-flag.png"
-            alt="Germany Flag"
-          />
-        </Link>
-
-        <Link to="/imprint/en">
-          <img
-            src="https://images.ctfassets.net/pntshaoi0gaf/50H9dCRBQQOUqQ4WCOAia6/7c721bd5184ea2c6960af294d51f58d4/united-kingdom-flag.png"
-            alt="Germany Flag"
-          />
+          <i className="fas fa-info-circle fa-8x" />
         </Link>
       </div>
 
       <div className="faq">
         <h1>FAQ</h1>
         <Link to="/faq/de">
-          <img
-            src="https://images.ctfassets.net/pntshaoi0gaf/50H9dCRBQQOUqQ4WCOAia6/4de54e93504822b023f8b76c01d7816c/germany-flag.png"
-            alt="Germany Flag"
-          />
+          <i className="fas fa-question-circle fa-8x" />
+        </Link>
+      </div>
+
+      <div className="agb">
+        <h1>AGB</h1>
+        <Link to="/agb/de">
+          <i className="fas fa-file fa-8x" />
         </Link>
       </div>
     </div>

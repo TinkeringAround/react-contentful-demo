@@ -64,7 +64,7 @@ export default () => {
             </li>
 
             <li>
-              <Link to="/">
+              <Link to="/agb/de">
                 <i className="fas fa-file-signature fa-2x" />
                 <br />
                 AGB

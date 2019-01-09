@@ -8,8 +8,7 @@ import Footer from "../components/Footer";
 
 class FAQ extends Component {
   state = {
-    entry: "",
-    sections: ""
+    entry: ""
   };
 
   componentDidMount() {
@@ -19,26 +18,27 @@ class FAQ extends Component {
         locale: this.props.locale
       })
       .then(entries => {
-        const renderedSections = entries.items[0].fields["sections"].map(
-          (section, index) => (
-            <Section
-              key={section.sys.id}
-              header={index + 1 + ". " + section.fields["header"]}
-              content={section.fields["content"]}
-              icon="fas fa-angle-down fa-2x"
-              iconInverse="fas fa-angle-up fa-2x"
-            />
-          )
-        );
-
         this.setState({
-          entry: entries.items[0].fields,
-          sections: renderedSections
+          entry: entries.items[0].fields
         });
       })
       .catch(error => {
         console.log(error);
       });
+  }
+
+  renderSections() {
+    const renderedSection = this.state.entry.sections.map((section, index) => (
+      <Section
+        key={section.sys.id}
+        header={index + 1 + ". " + section.fields["header"]}
+        content={section.fields["content"]}
+        icon="fas fa-angle-down fa-2x"
+        iconInverse="fas fa-angle-up fa-2x"
+      />
+    ));
+
+    return <React.Fragment>{renderedSection}</React.Fragment>;
   }
 
   render() {
@@ -68,7 +68,7 @@ class FAQ extends Component {
               <li>
                 <Link to="#">Guide &amp; Inform</Link>
               </li>
-              <li>
+              <li className="is-mobile-320-hidden">
                 <Link to="#">Security &amp; Service</Link>
               </li>
               <li className="mobile-hidden">
@@ -117,7 +117,7 @@ class FAQ extends Component {
             <header className="intro">
               <h1>{header}</h1>
             </header>
-            {this.state.sections}
+            {this.renderSections()}
             <p className="info">
               Hinweis: Die Verfügbarkeit der Dienste ist von Ihrer
               Fahrzeugausstattung und dem Land, in dem Sie sich befinden,

@@ -9,36 +9,10 @@ import Footer from "../components/Footer";
 class Imprint extends Component {
   state = {
     entry: "",
-    sections: "",
-    modus: "desktop"
+    modus: "desktop",
+    desktop: "",
+    hmi: ""
   };
-
-  fetchData() {
-    this.props.contentful
-      .getEntries({
-        content_type: "impressum",
-        locale: this.props.locale
-      })
-      .then(entries => {
-        const renderedSections = entries.items[0].fields["sections"].map(
-          section => (
-            <Section
-              key={section.sys.id}
-              header={section.fields["header"]}
-              content={section.fields["content"]}
-            />
-          )
-        );
-
-        this.setState({
-          entry: entries.items[0].fields,
-          sections: renderedSections
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
 
   componentDidMount() {
     this.fetchData();
@@ -49,41 +23,73 @@ class Imprint extends Component {
     this.fetchData();
   }
 
-  toggle() {
+  fetchData() {
+    this.props.contentful
+      .getEntries({
+        content_type: "impressum",
+        locale: this.props.locale
+      })
+      .then(entries => {
+        if (entries.items.length > 0) {
+          this.setState({
+            entry: entries.items[0].fields
+          });
+        } else {
+          throw new Error("Could not fetch any data from Contentful.");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  toggleModus() {
     this.setState({
       modus: this.state.modus === "desktop" ? "car" : "desktop"
     });
   }
 
+  renderDesktop() {
+    const { title, header, intro, sections } = this.state.entry;
+
+    const renderedSections = sections.map(section => (
+      <Section
+        key={section.sys.id}
+        header={section.fields["header"]}
+        content={section.fields["content"]}
+      />
+    ));
+
+    return (
+      <React.Fragment>
+        <header className="header">
+          <h1>{title}</h1>
+        </header>
+
+        <section className="content">
+          <header className="intro">
+            <h1>{header}</h1>
+            <RichText richtext={intro} />
+          </header>
+          {renderedSections}
+        </section>
+      </React.Fragment>
+    );
+  }
+
   render() {
-    if (this.state.hasOwnProperty("entry")) {
-      const { title, header, intro } = this.state.entry;
+    if (this.state.entry !== "") {
+      return (
+        <div id="imprint">
+          {this.state.modus === "desktop" ? this.renderDesktop() : ""}
 
-      if (this.state.modus === "desktop") {
-        return (
-          <div id="imprint">
-            <header className="header">
-              <h1>{title}</h1>
-            </header>
-
-            <section className="content">
-              <header className="intro">
-                <h1>{header}</h1>
-                <RichText richtext={intro} />
-              </header>
-              {this.state.sections}
-            </section>
-
-            <Footer toggle={this.toggle.bind(this)} icon={this.state.modus} />
-          </div>
-        );
-      } else {
-        return (
-          <div id="imprint">
-            <Footer toggle={this.toggle.bind(this)} icon={this.state.modus} />
-          </div>
-        );
-      }
+          <Footer
+            toggleModus={this.toggleModus.bind(this)}
+            /*icon={this.state.modus}*/
+            path={this.props.locale === "de-DE" ? "/imprint/en" : "/imprint/de"}
+          />
+        </div>
+      );
     } else {
       return <Spinner />;
     }

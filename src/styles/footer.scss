@@ -4,30 +4,12 @@ footer {
 
   background-color: rgb(217, 221, 223);
   display: grid;
-  grid-template-columns: 10px 40px 100px auto 100px 20px 10px;
+  grid-template-columns: 10px 50px 40px auto 70px 20px 10px;
   grid-template-rows: auto;
-  grid-template-areas: ". iconButton toggleText . upText upButton .";
+  grid-template-areas: ". locale modus . text dummy .";
   align-items: center;
 
   text-align: right;
-
-  .icon-button {
-    grid-area: iconButton;
-  }
-
-  .up-button {
-    grid-area: upButton;
-  }
-
-  .upText {
-    grid-area: upText;
-    text-align: right;
-  }
-
-  .toggleText {
-    grid-area: toggleText;
-    text-align: left;
-  }
 
   button {
     border: none;
@@ -41,12 +23,36 @@ footer {
     cursor: pointer;
     color: rgb(0, 143, 213);
   }
+
+  .locale {
+    grid-area: locale;
+
+    img {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  .modus {
+    grid-area: modus;
+  }
+
+  .dummy {
+    grid-area: dummy;
+  }
+
+  .text {
+    grid-area: text;
+    text-align: right;
+  }
 }
 
 @media screen and (max-width: 960px) {
   footer {
-    .icon-button,
-    .toggleText {
+    .modus {
       display: none;
     }
   }

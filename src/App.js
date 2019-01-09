@@ -6,6 +6,7 @@ import Imprint from "./views/Imprint";
 import FAQ from "./views/Faq";
 import Home from "./views/Home";
 import Navbar from "./views/Navbar";
+import AGB from "./views/Agb";
 
 const contentful = require("contentful");
 const config = {
@@ -44,6 +45,18 @@ class App extends Component {
               exact
               path="/faq/de"
               render={props => <FAQ contentful={client} locale="de-DE" />}
+            />
+
+            <Route
+              exact
+              path="/agb/de"
+              render={props => <AGB contentful={client} locale="de-DE" />}
+            />
+
+            <Route
+              exact
+              path="/agb/en"
+              render={props => <AGB contentful={client} locale="en-GB" />}
             />
           </Switch>
         </div>
