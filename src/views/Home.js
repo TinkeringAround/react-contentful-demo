@@ -15,21 +15,21 @@ const Home = props => {
 
       <div className="imprint">
         <h1>Impressum</h1>
-        <Link to="/imprint/de">
+        <Link to="/imprint/de-DE">
           <i className="fas fa-info-circle fa-8x" />
         </Link>
       </div>
 
       <div className="faq">
         <h1>FAQ</h1>
-        <Link to="/faq/de">
+        <Link to="/faq/de-DE">
           <i className="fas fa-question-circle fa-8x" />
         </Link>
       </div>
 
       <div className="agb">
         <h1>AGB</h1>
-        <Link to="/agb/de">
+        <Link to="/agb/de-DE">
           <i className="fas fa-file fa-8x" />
         </Link>
       </div>

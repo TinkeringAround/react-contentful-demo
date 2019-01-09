@@ -48,7 +48,7 @@ export default () => {
             </li>
 
             <li>
-              <Link to="/faq/de">
+              <Link to="/faq/de-DE">
                 <i className="fas fa-question-circle fa-2x" />
                 <br />
                 FAQ
@@ -56,7 +56,7 @@ export default () => {
             </li>
 
             <li>
-              <Link to="/imprint/de">
+              <Link to="/imprint/de-DE">
                 <i className="fas fa-info-circle fa-2x" />
                 <br />
                 Impressum
@@ -64,7 +64,7 @@ export default () => {
             </li>
 
             <li>
-              <Link to="/agb/de">
+              <Link to="/agb/de-DE">
                 <i className="fas fa-file-signature fa-2x" />
                 <br />
                 AGB

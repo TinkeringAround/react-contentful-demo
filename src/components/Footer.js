@@ -28,10 +28,10 @@ const Footer = props => {
       <Link to={props.path} className="locale">
         <img
           src={
-            props.path.includes("/en") ? flags.germanSrc : flags.britischSrc
+            props.path.includes("/en-GB") ? flags.germanSrc : flags.britischSrc
           }
           alt={
-            props.path.includes("/en") ? flags.germanAlt : flags.britischAlt
+            props.path.includes("/en-GB") ? flags.germanAlt : flags.britischAlt
           }
         />
       </Link>

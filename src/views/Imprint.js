@@ -86,7 +86,7 @@ class Imprint extends Component {
           <Footer
             toggleModus={this.toggleModus.bind(this)}
             /*icon={this.state.modus}*/
-            path={this.props.locale === "de-DE" ? "/imprint/en" : "/imprint/de"}
+            path={this.props.locale === "de-DE" ? "/imprint/en-GB" : "/imprint/de-DE"}
           />
         </div>
       );

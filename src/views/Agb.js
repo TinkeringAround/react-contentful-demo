@@ -99,7 +99,7 @@ class AGB extends Component {
           </section>
 
           <Footer
-            path={this.props.locale === "de-DE" ? "/agb/en" : "/agb/de"}
+            path={this.props.locale === "de-DE" ? "/agb/en-GB" : "/agb/de-DE"}
           />
         </div>
       );

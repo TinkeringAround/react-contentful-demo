@@ -31,31 +31,31 @@ class App extends Component {
 
             <Route
               exact
-              path="/imprint/de"
+              path="/imprint/de-DE"
               render={props => <Imprint contentful={client} locale="de-DE" />}
             />
 
             <Route
               exact
-              path="/imprint/en"
+              path="/imprint/en-GB"
               render={props => <Imprint contentful={client} locale="en-GB" />}
             />
 
             <Route
               exact
-              path="/faq/de"
+              path="/faq/de-DE"
               render={props => <FAQ contentful={client} locale="de-DE" />}
             />
 
             <Route
               exact
-              path="/agb/de"
+              path="/agb/de-DE"
               render={props => <AGB contentful={client} locale="de-DE" />}
             />
 
             <Route
               exact
-              path="/agb/en"
+              path="/agb/en-GB"
               render={props => <AGB contentful={client} locale="en-GB" />}
             />
           </Switch>
