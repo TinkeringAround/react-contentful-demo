@@ -7,32 +7,15 @@
   grid-template-areas:
     "header header header header"
     ". imprint faq ."
-    ". agb . .";
+    ". agb services .";
 
   color: rgb(42, 47, 49);
+  padding: 1rem;
 
   h1 {
     font-family: "VW Headline OT", "Arial", sans-serif;
-    font-size: 40px;
+    font-size: 2rem;
     color: rgb(42, 47, 49);
-    margin: 0 0 10px 0;
-  }
-
-  a {
-    color: grey;
-    text-decoration: none;
-
-    :visited {
-      color: grey;
-    }
-
-    :hover {
-      color: rgb(19, 147, 233);
-    }
-
-    :active {
-      color: grey;
-    }
   }
 
   .header {
@@ -44,6 +27,12 @@
       font-size: 50px;
       margin: 100px 0;
     }
+  }
+
+  .services {
+    grid-area: services;
+    text-align: center;
+    margin: 3rem 0;
   }
 
   .imprint {
@@ -59,8 +48,7 @@
   .agb {
     grid-area: agb;
     text-align: center;
-
-    margin: 50px 0;
+    margin: 3rem 0;
   }
 
   img {
@@ -82,7 +70,7 @@
     grid-template-areas:
       "header header"
       "imprint faq"
-      "agb .";
+      "agb services";
 
     h1 {
       font-size: 24px;
