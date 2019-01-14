@@ -6,6 +6,7 @@
   "homepage": "https://vw-contentful-demo.netlify.com/",
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^12.1.2",
+    "@contentful/rich-text-types": "^12.1.2",
     "contentful": "^7.0.5",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -20,6 +21,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "dotenv": "^6.2.0",
     "node-sass": "^4.11.0"
   },
   "eslintConfig": {
