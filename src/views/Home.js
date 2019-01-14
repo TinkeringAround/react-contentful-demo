@@ -14,24 +14,31 @@ const Home = props => {
       </header>
 
       <div className="imprint">
-        <h1>Impressum</h1>
         <Link to="/imprint/de-DE">
-          <i className="fas fa-info-circle fa-8x" />
+          <i className="fas fa-info-circle fa-4x" />
         </Link>
+        <h1>Impressum</h1>
       </div>
 
       <div className="faq">
-        <h1>FAQ</h1>
         <Link to="/faq/de-DE">
-          <i className="fas fa-question-circle fa-8x" />
+          <i className="fas fa-question-circle fa-4x" />
         </Link>
+        <h1>FAQ</h1>
       </div>
 
       <div className="agb">
-        <h1>AGB</h1>
         <Link to="/agb/de-DE">
-          <i className="fas fa-file fa-8x" />
+          <i className="fas fa-file fa-4x" />
         </Link>
+        <h1>AGB</h1>
+      </div>
+
+      <div className="services">
+        <Link to="/services/WVWZZZAUZJW000001/de-DE">
+          <i className="fas fa-car fa-4x" />
+        </Link>
+        <h1>Dienste</h1>
       </div>
     </div>
   );
