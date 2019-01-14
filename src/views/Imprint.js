@@ -87,15 +87,52 @@ class Imprint extends Component {
     );
   }
 
+  renderHMI() {
+    const { title, sections } = this.state.entry;
+    const options = {
+      renderNode: {
+        [INLINES.EMBEDDED_ENTRY]: node => {
+          return node.data.target.fields["hotline"];
+        }
+      }
+    };
+
+    const renderedSections = sections.map(section => (
+      <Section
+        key={section.sys.id}
+        header={section.fields["header"]}
+        content={section.fields["content"]}
+        options={options}
+      />
+    ));
+
+    return (
+      <React.Fragment>
+        <header className="header">
+          <h1>{"HMI " + title}</h1>
+        </header>
+
+        <section className="content">
+          <div id="hmi">
+            <h1>{title}</h1>
+            <div>{renderedSections}</div>
+          </div>
+        </section>
+      </React.Fragment>
+    );
+  }
+
   render() {
     if (this.state.entry !== "") {
       return (
         <div id="imprint">
-          {this.state.modus === "desktop" ? this.renderDesktop() : ""}
+          {this.state.modus === "desktop"
+            ? this.renderDesktop()
+            : this.renderHMI()}
 
           <Footer
             toggleModus={this.toggleModus.bind(this)}
-            /*icon={this.state.modus}*/
+            icon={this.state.modus}
             path={
               this.props.locale === "de-DE"
                 ? "/imprint/en-GB"
