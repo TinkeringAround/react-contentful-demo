@@ -5,7 +5,7 @@ const Block = props => {
   return (
     <article className="block">
       <h2>{props.header}</h2>
-      <RichText richtext={props.content} />
+      <RichText richtext={props.content} options={props.options}/>
     </article>
   );
 };

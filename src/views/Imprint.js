@@ -5,6 +5,7 @@ import Section from "../components/Block";
 import RichText from "../components/Richtext";
 import Spinner from "../components/Spinner";
 import Footer from "../components/Footer";
+import { INLINES } from "@contentful/rich-text-types";
 
 class Imprint extends Component {
   state = {
@@ -27,7 +28,8 @@ class Imprint extends Component {
     this.props.contentful
       .getEntries({
         content_type: "impressum",
-        locale: this.props.locale
+        locale: this.props.locale,
+        include: 2
       })
       .then(entries => {
         if (entries.items.length > 0) {
@@ -51,12 +53,20 @@ class Imprint extends Component {
 
   renderDesktop() {
     const { title, header, intro, sections } = this.state.entry;
+    const options = {
+      renderNode: {
+        [INLINES.EMBEDDED_ENTRY]: node => {
+          return node.data.target.fields["hotline"];
+        }
+      }
+    };
 
     const renderedSections = sections.map(section => (
       <Section
         key={section.sys.id}
         header={section.fields["header"]}
         content={section.fields["content"]}
+        options={options}
       />
     ));
 
@@ -86,7 +96,11 @@ class Imprint extends Component {
           <Footer
             toggleModus={this.toggleModus.bind(this)}
             /*icon={this.state.modus}*/
-            path={this.props.locale === "de-DE" ? "/imprint/en-GB" : "/imprint/de-DE"}
+            path={
+              this.props.locale === "de-DE"
+                ? "/imprint/en-GB"
+                : "/imprint/de-DE"
+            }
           />
         </div>
       );

@@ -4,7 +4,11 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 const RichText = props => {
   return props.richtext
     ? props.richtext.content.map((paragraph, index) => {
-        return <p key={index}>{documentToHtmlString(paragraph)}</p>;
+        return props.options != null ? (
+          <p key={index}>{documentToHtmlString(paragraph, props.options)}</p>
+        ) : (
+          <p key={index}>{documentToHtmlString(paragraph)}</p>
+        );
       })
     : "";
 };
