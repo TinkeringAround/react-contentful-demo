@@ -7,6 +7,7 @@ import FAQ from "./views/Faq";
 import Home from "./views/Home";
 import Navbar from "./views/Navbar";
 import AGB from "./views/Agb";
+import Services from "./views/Services";
 
 const contentful = require("contentful");
 const config = {
@@ -45,6 +46,12 @@ class App extends Component {
               exact
               path="/faq/de-DE"
               render={props => <FAQ contentful={client} locale="de-DE" />}
+            />
+
+            <Route
+              exact
+              path="/services/:id/de-DE"
+              render={props => <Services contentful={client}  {...props} locale="de-DE" />}
             />
 
             <Route
