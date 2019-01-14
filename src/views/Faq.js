@@ -42,7 +42,7 @@ class FAQ extends Component {
   }
 
   render() {
-    const { title, header } = this.state.entry;
+    const { title, header, hotline } = this.state.entry;
 
     if (this.state.entry !== "") {
       return (
@@ -126,7 +126,7 @@ class FAQ extends Component {
             <div className="contact">
               <div className="byPhone">
                 <i className="fas fa-phone fa-5x" />
-                <h1>0800 - 40 888 00 *</h1>
+                <h1>{hotline.fields['hotline']} *</h1>
                 <p>
                   * Unterstützt Ihr Telefonprovider diese kostenfreie Nummer
                   nicht, rufen Sie bitte +49 5363 9223300 an. Die Kosten richten
