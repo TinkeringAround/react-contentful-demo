@@ -14,7 +14,7 @@ const Modal = props => {
                 </div>
                 </div>
                 <div className="modal--content">
-                    <img src={item.fields.image.fields.file.url + '?fit=crop&w=780&h=300'}  alt={item.fields.image.fields.title} />
+                    <img src={item.fields.image.fields.file.url + '?fit=fill&w=670'}  alt={item.fields.image.fields.title} />
                     <p>{item.fields.description}</p>
                 </div>
             </div>

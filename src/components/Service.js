@@ -40,7 +40,7 @@ class Service extends Component {
                     <h2 className="title">{service.name}</h2>
                 </div>
                 <div className="description">
-                    <img src={service.image.fields.file.url + '?fit=scale&w=800&h=250'}  alt={service.image.fields.title} />
+                    <img src={service.image.fields.file.url + '?fit=fill&w=800&h=250'}  alt={service.image.fields.title} />
                     <p>{service.description}</p>
                 </div>
                 <br />
