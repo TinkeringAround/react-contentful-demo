@@ -6,7 +6,8 @@ import "../styles/services.scss";
 
 class Services extends Component {
     state = {
-        service: ""
+        service: "",
+        activeIndex: 0
       };
 
     componentDidMount() {
@@ -48,13 +49,30 @@ class Services extends Component {
             });
         })
       }
+
+      toggleActiveClass(index, props) {
+          console.log('toggle')
+        this.setState({ activeIndex: index });
+      }
     
     render () {
-
+        const FINs = ["WVWZZZAUZJW000001", "WVWZZZAUZJW000002", "WVWZZZAUZJW000003"]
+        
         if (this.state.service !== "") {
             const services = this.state.service.map((item, index) => {
                 return (
                 <Service service={item.fields} key={index} />
+                )
+            })
+
+            const selection = FINs.map((item, index) => {
+                return (
+                    <Link to={'/services/' + item + '/' + this.props.locale} key={index} onClick={this.toggleActiveClass.bind(this, index, this.props)}>
+                    <div className={this.state.activeIndex === index ? 'select-item active' : 'select-item'}>
+                        <i className="fas fa-car-side fa-2x"></i>
+                        <p>{item}</p>
+                    </div>
+                </Link>
                 )
             })
 
@@ -76,24 +94,7 @@ class Services extends Component {
                         <br />
                         <h3>Wählen Sie ihr Fahrzeug:</h3>
                         <div className="selection">
-                            <Link to={'/services/WVWZZZAUZJW000001/' + this.props.locale}>
-                                <div className="select-item">
-                                    <i className="fas fa-car-side fa-2x"></i>
-                                    <p>WVWZZZAUZJW000001</p>
-                                </div>
-                            </Link>
-                            <Link to={'/services/WVWZZZAUZJW000002/' + this.props.locale}>
-                                <div className="select-item">
-                                    <i className="fas fa-car-side fa-2x"></i>
-                                    <p>WVWZZZAUZJW000002</p>
-                                </div>
-                            </Link>
-                            <Link to={'/services/WVWZZZAUZJW000003/' + this.props.locale}>
-                                <div className="select-item">
-                                    <i className="fas fa-car-side fa-2x"></i>
-                                    <p>WVWZZZAUZJW000003</p>
-                                </div>
-                            </Link>
+                            {selection}
                         </div>
                         <br />
                         <br />

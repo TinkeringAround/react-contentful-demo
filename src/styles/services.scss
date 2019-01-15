@@ -59,6 +59,10 @@ $middle-grey: #9FA5AC;
     }
   } 
 
+  .active {
+    color: $primary-blue;
+  }
+
   .selection {
     text-align: center;
   }
