@@ -51,13 +51,12 @@ class Services extends Component {
       }
 
       toggleActiveClass(index, props) {
-          console.log('toggle')
         this.setState({ activeIndex: index });
       }
     
     render () {
         const FINs = ["WVWZZZAUZJW000001", "WVWZZZAUZJW000002", "WVWZZZAUZJW000003"]
-        
+
         if (this.state.service !== "") {
             const services = this.state.service.map((item, index) => {
                 return (
