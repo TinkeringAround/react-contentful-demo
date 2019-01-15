@@ -8,7 +8,7 @@ const FINs = ["WVWZZZAUZJW000001", "WVWZZZAUZJW000002", "WVWZZZAUZJW000003"]
 
 class Services extends Component {
     state = {
-        service: "",
+        services: "",
         activeIndex: 0
       };
 
@@ -25,29 +25,31 @@ class Services extends Component {
     
     fetchData() {
         const { match } = this.props
-        let FINs = {
+        let entriesByFin = {
             "WVWZZZAUZJW000001":[ "63SegZ72j6c8csiqMg8SGo"],
             "WVWZZZAUZJW000002": ["17J33bHrAWIEaMqICcOKes"],
             "WVWZZZAUZJW000003": ["17J33bHrAWIEaMqICcOKes", "6bFO4WVQIgeMYE2qOcmSWQ"]
         }
-        let FIN = [FINs[match.params.id]][0]
-        let services = []
+        let entriesIds = [entriesByFin[match.params.id]][0]
+        let servicesArr = []
 
-        return FIN.map(FIN => {
-            return this.props.contentful.getEntry(FIN, { locale: this.props.locale})
+        return entriesIds.map(entryId => {
+            return this.props.contentful.getEntry(entryId, { locale: this.props.locale})
             .then(entry => {
                 if (entry) {
-                    if([FINs[match.params.id]][0].length > 1) { 
-                            services.push(entry)
-                            this.setState({ service: services })
+                    if([entriesByFin[match.params.id]][0].length > 1) { 
+                            servicesArr.push(entry)
+                            console.log(servicesArr)
+                            this.setState({ services: servicesArr })
                     } else {
                         this.setState({
-                            service: [entry]
+                            services: [entry]
                         });
                     }
                 } else {
                 throw new Error("Could not fetch any data from Contentful.");
             }
+            console.log(servicesArr)
             }).catch(error => {
             console.log(error);
             });
@@ -70,13 +72,12 @@ class Services extends Component {
             )
         })
 
-        if (this.state.service !== "") {
-            const renderServices = this.state.service.map((item, index) => {
+        if (this.state.services !== "") {
+            const renderServices = this.state.services.map((item, index) => {
                 return (
                     <Service service={item.fields} key={index} renderModal={this.renderModal} />
                 )
             })
-
             return (
                 <div id="services">
                     {this.state.showModal ? this.renderModal : null}
