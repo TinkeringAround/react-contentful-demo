@@ -1,12 +1,20 @@
 $middle-grey: #9FA5AC;
 
+.overlay {
+    background: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
 .modal {
     position: fixed;
     background: white;
-    padding: 1rem;
-    margin-right: 2rem;
-    max-width: 280px;
-    top: 5rem;
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: 100%;
     border: 1px solid $middle-grey;
     border-radius: 10px;
 
@@ -24,11 +32,14 @@ $middle-grey: #9FA5AC;
     }
 
     @media screen and (min-width: 768px) {
-        max-width: 800px;
-
         .title {
             font-size: 1.5rem;
         }
-    
+    }
+    @media screen and (min-width: 1024px) {
+        max-width: 780px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
