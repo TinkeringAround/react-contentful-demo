@@ -1,0 +1,24 @@
+$middle-grey: #9FA5AC;
+
+.modal {
+    position: fixed;
+    background: white;
+    padding: 2rem;
+    margin: 2rem;
+    top: 5rem;
+    max-width: 800px;
+    border: 1px solid $middle-grey;
+    border-radius: 10px;
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .btn--close {
+        text-align: right;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
