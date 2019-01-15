@@ -4,6 +4,8 @@ import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 import "../styles/services.scss";
 
+const FINs = ["WVWZZZAUZJW000001", "WVWZZZAUZJW000002", "WVWZZZAUZJW000003"]
+
 class Services extends Component {
     state = {
         service: "",
@@ -12,14 +14,16 @@ class Services extends Component {
 
     componentDidMount() {
         this.fetchData();
+        this.setState({ activeIndex: FINs.indexOf(this.props.match.params.id)})
+
       }
 
-      componentWillReceiveProps(newProps) {
-        this.props = newProps;
-        this.fetchData();
-      }
+    componentWillReceiveProps(newProps) {
+    this.props = newProps;
+    this.fetchData();
+    }
     
-      fetchData() {
+    fetchData() {
         const { match } = this.props
         let FINs = {
             "WVWZZZAUZJW000001":[ "63SegZ72j6c8csiqMg8SGo"],
@@ -48,35 +52,34 @@ class Services extends Component {
             console.log(error);
             });
         })
-      }
+    }
 
-      toggleActiveClass(index, props) {
+    toggleActiveClass(index) {
         this.setState({ activeIndex: index });
-      }
-    
+    }
+
     render () {
-        const FINs = ["WVWZZZAUZJW000001", "WVWZZZAUZJW000002", "WVWZZZAUZJW000003"]
+        const renderSelection = FINs.map((item, index) => {
+            return (
+                <Link to={'/services/' + item + '/' + this.props.locale} key={index} onClick={this.toggleActiveClass.bind(this, index)}>
+                <div className={this.state.activeIndex === index ? 'select-item active' : 'select-item'}>
+                    <i className="fas fa-car-side fa-2x"></i>
+                    <p>{item}</p>
+                </div>
+            </Link>
+            )
+        })
 
         if (this.state.service !== "") {
-            const services = this.state.service.map((item, index) => {
+            const renderServices = this.state.service.map((item, index) => {
                 return (
-                <Service service={item.fields} key={index} />
-                )
-            })
-
-            const selection = FINs.map((item, index) => {
-                return (
-                    <Link to={'/services/' + item + '/' + this.props.locale} key={index} onClick={this.toggleActiveClass.bind(this, index, this.props)}>
-                    <div className={this.state.activeIndex === index ? 'select-item active' : 'select-item'}>
-                        <i className="fas fa-car-side fa-2x"></i>
-                        <p>{item}</p>
-                    </div>
-                </Link>
+                    <Service service={item.fields} key={index} renderModal={this.renderModal} />
                 )
             })
 
             return (
                 <div id="services">
+                    {this.state.showModal ? this.renderModal : null}
                     <div className="header">
                         <h1>Fahrzeugaktivierung</h1>
                     </div>
@@ -93,11 +96,15 @@ class Services extends Component {
                         <br />
                         <h3>Wählen Sie ihr Fahrzeug:</h3>
                         <div className="selection">
-                            {selection}
+                            {renderSelection}
                         </div>
                         <br />
                         <br />
-                        {services}
+                        {renderServices}
+
+                        <p className="text-grey">
+                            Hinweis: Je nach Ausstattung Ihres Fahrzeugs und Land, in dem Sie sich befinden, stehen ggf. nicht alle (Teil-) Funktionen zur Verfügung.
+                        </p>
                     </div>
 
                     <section className="agb-submit content-wrapper">
