@@ -37,19 +37,16 @@ class Services extends Component {
             return this.props.contentful.getEntry(entryId, { locale: this.props.locale})
             .then(entry => {
                 if (entry) {
-                    if([entriesByFin[match.params.id]][0].length > 1) { 
-                            servicesArr.push(entry)
-                            console.log(servicesArr)
-                            this.setState({ services: servicesArr })
-                    } else {
-                        this.setState({
-                            services: [entry]
-                        });
-                    }
+                    servicesArr.push(entry)
                 } else {
                 throw new Error("Could not fetch any data from Contentful.");
             }
-            console.log(servicesArr)
+            servicesArr.sort(function(a, b){
+                if(a.fields.name < b.fields.name) { return -1; }
+                if(a.fields.name > b.fields.name) { return 1; }
+                return 0;
+            })
+            this.setState({ services: servicesArr })
             }).catch(error => {
             console.log(error);
             });
