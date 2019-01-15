@@ -21,6 +21,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "dotenv": "^6.2.0",
     "node-sass": "^4.11.0"
   },
   "eslintConfig": {

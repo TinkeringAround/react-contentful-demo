@@ -1,0 +1,177 @@
+$primary-blue: #0199D9;
+$light-blue: #BCE3F5;
+$light-grey: #F3F5F6;
+$middle-grey: #9FA5AC;
+
+#services {
+  grid-area: content;
+
+  .header {
+    padding: 2.5rem 0;
+    text-align: center;
+    color: white;
+    background-color: $primary-blue;
+  }
+
+  .content-wrapper {
+    padding: 2rem;
+  }
+
+  .breadcrumb {
+    margin: 1.5rem 0 3rem;
+    ol {
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      color: $light-blue;
+      background-color: $primary-blue;
+      text-transform: uppercase;
+      counter-reset: item;
+      list-style: none;
+
+      li {
+        margin: 0.5rem;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+        counter-increment: item;
+
+        &:before {
+          margin-right: 0.5rem;
+          content: counter(item);
+          background-color: $light-blue;
+          border-radius: 100%;
+          color: $primary-blue;
+          width: 1.5em;
+          display: inline-block;    
+          text-align: center;
+        }
+      }
+
+      li.active {
+        background: white;
+        border-radius: 25px;
+        color: black;
+
+        &:before {
+          background-color: $primary-blue;
+          color: white;
+        }
+      }
+    }
+  } 
+
+  .active {
+    color: $primary-blue;
+  }
+
+  .selection {
+    text-align: center;
+  }
+
+  .service {
+    padding: 0;
+  }
+
+  .text-icon-wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .icon {
+      margin-right: 1rem;
+      padding: 0.5rem;
+    }
+    .title {
+      font-family: 'VW Headline OT';
+      margin: 0;
+    }
+  }
+
+  h1, h2, h3 {
+    font-family:  'VW Headline OT';
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+  
+  p {
+    font-size: 0.85rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  button {
+    border: none;
+    font-size: inherit;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .text-grey {
+    color: $middle-grey;
+    font-size: 0.7rem;
+  }
+
+  .btn--primary {
+    background: $primary-blue;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    margin: 3rem auto;
+  }
+
+  .btn--link {
+    border: none;
+    background: unset;
+    padding: 0;
+    color: $primary-blue;
+  }
+
+  .agb-submit {
+    padding: 2rem;
+    background: $light-grey;
+  }
+
+  @media screen and (min-width: 768px) {
+    .selection {
+      display: flex;
+  
+      .select-item {
+        margin-right: 2rem;
+      }
+    }
+
+    .breadcrumb {
+      text-align: center;
+  
+      ol {
+        display:  flex;
+        padding: 0;
+        justify-content: space-around;
+      }
+    } 
+    .service {
+      max-width: 90%;
+
+      .items {
+        display: grid;
+        grid-template-columns: 50% 50%;      
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .content-wrapper {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .service {
+      max-width: 65%;
+    }
+  }
+}

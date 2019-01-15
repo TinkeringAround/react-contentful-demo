@@ -9,6 +9,25 @@
       grid-area: content;
     }
   }
+
+  a {
+    color: grey;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:visited {
+      color: grey;
+    }
+
+    &:hover {
+      color: rgb(19, 147, 233);
+    }
+
+    &:active {
+      color: grey;
+    }
+  }
+  
 }
 
 @media screen and (max-width: 960px) {
