@@ -7,7 +7,7 @@ const Modal = props => {
         <div className="overlay">
             <div className={showModal ? 'modal' : 'modal hidden'}>
                 <div className="modal--header">
-                    <div className="btn--close" onClick={closeModal}><i className="fas fa-times fa-2x"></i></div>
+                    <div className="btn--close" onClick={closeModal}><i className="fas fa-times-circle fa-2x"></i></div>
                     <div className="text-icon-wrapper">
                     <img className="icon" src={item.fields.icon.fields.file.url}  alt={item.fields.icon.fields.title}  style={{backgroundColor: '#' + color}} />
                     <span className="title">{item.fields.name}</span>

@@ -115,7 +115,7 @@ class Imprint extends Component {
         <section className="content">
           <div id="hmi">
             <h1>{title}</h1>
-            <div>{renderedSections}</div>
+            <div className="hmi-wrapper">{renderedSections}</div>
           </div>
         </section>
       </React.Fragment>
@@ -132,7 +132,7 @@ class Imprint extends Component {
 
           <Footer
             toggleModus={this.toggleModus.bind(this)}
-            icon={this.state.modus}
+            icon={this.state.modus  === "desktop" ? "car" : "desktop"}
             path={
               this.props.locale === "de-DE"
                 ? "/imprint/en-GB"

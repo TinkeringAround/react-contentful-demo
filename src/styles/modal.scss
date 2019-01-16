@@ -17,6 +17,7 @@ $middle-grey: #9FA5AC;
     max-width: 100%;
     border: 1px solid $middle-grey;
     border-radius: 10px;
+    color: black;
 
     .title {
         font-size: 0.9rem;
@@ -32,14 +33,13 @@ $middle-grey: #9FA5AC;
     }
 
     @media screen and (min-width: 768px) {
-        .title {
-            font-size: 1.5rem;
-        }
-    }
-    @media screen and (min-width: 1024px) {
-        max-width: 780px;
+        width: 670px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
+        .title {
+            font-size: 1.5rem;
+        }
     }
 }
