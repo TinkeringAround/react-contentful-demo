@@ -99,7 +99,7 @@ class Services extends Component {
                     :         
                     <h1>"HMI Fahrzeugaktivierung"</h1>
                     }
-                    <div className="hmi-wrapper">
+                    <div className={ this.state.modus === "car" ? "hmi-wrapper" : null}>
                         <div className={this.state.modus === "car"  ? "article" : "content-wrapper"}>
                             <div className="breadcrumb">
                                 <ol>
@@ -150,7 +150,6 @@ class Services extends Component {
                 <Footer
                     toggleModus={this.toggleModus.bind(this)}
                     icon={this.state.modus  === "desktop" ? "car" : "desktop"}
-                    path={this.props.locale}
                 />
             </div>
             )

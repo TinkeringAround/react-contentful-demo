@@ -26,6 +26,20 @@
       height: 400px;
       overflow-y: scroll;
 
+    .overlay {
+        background: transparent;
+    }
+
+     .modal {
+        width: 400px;
+        max-height: 460px;
+        top: 35%;
+
+        .modal--content p {
+            font-size: 0.9rem;
+        }
+    }
+
       article, .article {
         margin: 30px 20px;
         width: 800px;

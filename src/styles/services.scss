@@ -132,6 +132,10 @@ $middle-grey: #9FA5AC;
     color: $primary-blue;
   }
 
+  .btn--close {
+    color: black;
+  }
+
   .agb-submit {
     padding: 2rem;
     background: $light-grey;
@@ -156,8 +160,6 @@ $middle-grey: #9FA5AC;
       }
     } 
     .service {
-      max-width: 90%;
-
       .items {
         display: grid;
         grid-template-columns: 50% 50%;      
@@ -171,7 +173,11 @@ $middle-grey: #9FA5AC;
       margin: 0 auto;
     }
     .service {
-      max-width: 65%;
+      width: 65%;
+    }
+
+    #hmi .service {
+      width: 100%;
     }
   }
 }
