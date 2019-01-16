@@ -30,13 +30,6 @@ class Services extends Component {
     this.fetchServiceById('nymVB60QpwseC0eEkyEck');
     this.fetchData();
     }
-
-    toggleModus() {
-        this.setState({
-          modus: this.state.modus === "desktop" ? "car" : "desktop"
-        });
-      }
-    
     
     fetchData() {
         const { match } = this.props
@@ -53,13 +46,8 @@ class Services extends Component {
                 'sys.id[in]': entriesIds.toString() ,
                 'order': 'fields.name'
             })
-            .then(entry => {
-                if (entry) {
-                    this.setState({ services: entry.items })
-                } else {
-                    throw new Error("Could not fetch any data from Contentful.");
-                }
-            }).catch(error => { console.log(error) });
+            .then(entry => { this.setState({ services: entry.items })})
+            .catch(error => { console.log(error) });
     }
 
     fetchServiceById (Id) {
@@ -67,15 +55,20 @@ class Services extends Component {
             content_type: 'service',
             locale: this.props.locale,
             'sys.id': Id
-        }).then(entry => { 
-            this.setState({ hmiService: entry.items[0].fields }) 
-        }).catch(err => console.log(err))
+        }).then(entry => { this.setState({ hmiService: entry.items[0].fields }) })
+        .catch(err => console.log(err))
 
     }
 
     toggleActiveClass(index) {
         this.setState({ activeIndex: index });
     }
+
+    toggleModus() {
+        this.setState({
+          modus: this.state.modus === "desktop" ? "car" : "desktop"
+        });
+      }
 
     renderHMI() {
         const { hmiService } = this.state
@@ -179,7 +172,7 @@ class Services extends Component {
         if(this.state.modus === "car") {
             if (this.state.hmiService !== "") {
                 return this.renderHMI()
-            }
+            }  
         } else {
             if (this.state.services !== "") {
                 const renderServices = this.state.services.map((item, index) => {
