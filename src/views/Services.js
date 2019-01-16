@@ -20,14 +20,14 @@ class Services extends Component {
 
     componentDidMount() {
         this.fetchData();
-        this.fetchServiceById('nymVB60QpwseC0eEkyEck');
+        this.fetchHMIServiceById('nymVB60QpwseC0eEkyEck');
         this.setState({ activeIndex: FINs.indexOf(this.props.match.params.id)})
 
       }
 
     componentWillReceiveProps(newProps) {
     this.props = newProps;
-    this.fetchServiceById('nymVB60QpwseC0eEkyEck');
+    this.fetchHMIServiceById('nymVB60QpwseC0eEkyEck');
     this.fetchData();
     }
     
@@ -50,7 +50,7 @@ class Services extends Component {
             .catch(error => { console.log(error) });
     }
 
-    fetchServiceById (Id) {
+    fetchHMIServiceById (Id) {
         return this.props.contentful.getEntries({
             content_type: 'service',
             locale: this.props.locale,
@@ -60,7 +60,7 @@ class Services extends Component {
 
     }
 
-    toggleActiveClass(index) {
+    setActiveClass(index) {
         this.setState({ activeIndex: index });
     }
 
@@ -160,7 +160,7 @@ class Services extends Component {
     render () {
         const renderSelection = FINs.map((item, index) => {
             return (
-                <Link to={'/services/' + item + '/' + this.props.locale} key={index} onClick={this.toggleActiveClass.bind(this, index)}>
+                <Link to={'/services/' + item + '/' + this.props.locale} key={index} onClick={this.setActiveClass.bind(this, index)}>
                     <div className={this.state.activeIndex === index ? 'select-item active' : 'select-item'}>
                         <i className="fas fa-car-side fa-2x"></i>
                         <p>{item}</p>
