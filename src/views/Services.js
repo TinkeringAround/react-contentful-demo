@@ -3,8 +3,8 @@ import Service from "../components/Service";
 import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import "../styles/services.scss";
 import "../styles/hmi.scss";
+import "../styles/services.scss";
 
 const FINs = ["WVWZZZAUZJW000001", "WVWZZZAUZJW000002", "WVWZZZAUZJW000003"]
 

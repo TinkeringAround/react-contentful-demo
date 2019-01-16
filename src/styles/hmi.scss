@@ -8,9 +8,12 @@
     h1 {
       position: relative;
       top: 40px;
-      left: 160px;
       font-size: 30px;
       color: white;
+    }
+
+    .selection a {
+        color: white;
     }
 
     .hmi-wrapper {
@@ -33,7 +36,6 @@
         }
 
         p {
-          margin: 0;
           font-size: 17px;
         }
       }
