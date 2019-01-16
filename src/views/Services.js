@@ -41,29 +41,25 @@ class Services extends Component {
     fetchData() {
         const { match } = this.props
         let entriesByFin = {
-            "WVWZZZAUZJW000001":[ "63SegZ72j6c8csiqMg8SGo"],
+            "WVWZZZAUZJW000001":["63SegZ72j6c8csiqMg8SGo"],
             "WVWZZZAUZJW000002": ["17J33bHrAWIEaMqICcOKes"],
             "WVWZZZAUZJW000003": ["17J33bHrAWIEaMqICcOKes", "6bFO4WVQIgeMYE2qOcmSWQ"]
         }
-        let entriesIds = [entriesByFin[match.params.id]][0]
-        let servicesArr = []
+        let entriesIds = entriesByFin[match.params.id]
 
-        return entriesIds.map(entryId => {
-            return this.props.contentful.getEntry(entryId, { locale: this.props.locale})
+        return this.props.contentful.getEntries( {
+                locale: this.props.locale,
+                content_type: 'article',
+                'sys.id[in]': entriesIds.toString() ,
+                'order': 'fields.name'
+            })
             .then(entry => {
                 if (entry) {
-                    servicesArr.push(entry)
+                    this.setState({ services: entry.items })
                 } else {
-                throw new Error("Could not fetch any data from Contentful.");
-            }
-            servicesArr.sort(function(a, b){
-                if(a.fields.name < b.fields.name) { return -1; }
-                if(a.fields.name > b.fields.name) { return 1; }
-                return 0;
-            })
-            this.setState({ services: servicesArr })
+                    throw new Error("Could not fetch any data from Contentful.");
+                }
             }).catch(error => { console.log(error) });
-        })
     }
 
     fetchServiceById (Id) {
