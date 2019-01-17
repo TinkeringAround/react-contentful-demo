@@ -25,11 +25,11 @@
       color: white;
 
       width: 850px;
-      height: 500px;
+      height: 450px;
       overflow-y: scroll;
 
       .text-icon-wrapper {
-        margin-top: 5rem;
+        margin-top: 2rem;
         .title {
           font-size: 1.8rem;
         }
@@ -50,7 +50,7 @@
       .hmi--footer {
         position: absolute;
         width: inherit;
-        margin: 1.5rem;
+        margin: 1.5rem 0 0;
         bottom: 0;
 
         hr.divider {
@@ -59,6 +59,7 @@
 
         .text--back {
           padding: 0 1rem;
+          margin-bottom: 0;
           font-size: 1.5rem;
         }
       }

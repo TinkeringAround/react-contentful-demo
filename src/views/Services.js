@@ -75,6 +75,7 @@ class Services extends Component {
         return (
             <div id="services">
                 <div id="hmi">
+                    <h1>Dienste</h1>
                     <div className="hmi-wrapper">
                         <article>
                             <div className="text-icon-wrapper">
