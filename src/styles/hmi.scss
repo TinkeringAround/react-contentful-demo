@@ -21,7 +21,7 @@
 
     .hmi-wrapper {
       position: relative;
-      top: 40px;
+      top: 2rem;
       left: 140px;
       color: white;
       width: 850px;
@@ -31,13 +31,13 @@
       .text-icon-wrapper {
         margin-top: 2rem;
         .title {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
       }
 
       .description {
         max-width: 550px;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       .icon.hmi--icon {
@@ -45,23 +45,6 @@
         border: 1px solid #676767;
         padding: 0.9rem;
         border-radius: 5px;
-      }
-
-      .hmi--footer {
-        position: absolute;
-        width: inherit;
-        margin: 1.5rem 0 0;
-        bottom: 0;
-
-        hr.divider {
-          border-color: #0F2B3F;
-        }
-
-        .text--back {
-          padding: 0 1rem;
-          margin-bottom: 0;
-          font-size: 1.5rem;
-        }
       }
 
       article {
@@ -74,10 +57,30 @@
         }
 
         p {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
         }
       }
     }
+
+  .hmi--footer {
+    position: relative;
+    width: 850px;
+    margin: 1.5rem 0 0;
+    left: 140px;
+    bottom: 0;
+    top: 2rem;
+
+    hr.divider {
+      border-color: #0F2B3F;
+    }
+
+    .text--back {
+      padding: 0 1rem;
+      margin-bottom: 0;
+      font-size: 1.2rem;
+    }
+  }
+
     @media screen and (max-width: 1250px) {
         display: none;
     }
