@@ -29,16 +29,20 @@
       .text-icon-wrapper {
         margin-top: 5rem;
         .title {
-          font-size: 1.2rem;
+          font-size: 2rem;
         }
       }
 
       .description {
-        max-width: 400px;
+        max-width: 550px;
+        font-size: 1.3rem;
       }
 
       .hmi--icon {
-        border: 1px solid white;
+        margin-right: 2rem;
+        border: 1px solid #676767;
+        padding: 0.9rem;
+        border-radius: 5px;
       }
 
       .hmi--footer {
@@ -53,6 +57,7 @@
 
         .text--back {
           padding: 0 1rem;
+          font-size: 1.5rem;
         }
       }
 
