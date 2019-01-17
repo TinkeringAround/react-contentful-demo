@@ -23,25 +23,46 @@
       color: white;
 
       width: 850px;
-      height: 400px;
+      height: 500px;
       overflow-y: scroll;
 
-    .overlay {
-        background: transparent;
-    }
-
-     .modal {
-        width: 400px;
-        max-height: 460px;
-        top: 35%;
-
-        .modal--content p {
-            font-size: 0.9rem;
+      .text-icon-wrapper {
+        margin-top: 5rem;
+        .title {
+          font-size: 2rem;
         }
-    }
+      }
 
-      article, .article {
-        margin: 30px 20px;
+      .description {
+        max-width: 550px;
+        font-size: 1.3rem;
+      }
+
+      .hmi--icon {
+        margin-right: 2rem;
+        border: 1px solid #676767;
+        padding: 0.9rem;
+        border-radius: 5px;
+      }
+
+      .hmi--footer {
+        position: absolute;
+        width: inherit;
+        margin: 1.5rem;
+        bottom: 0;
+
+        hr.divider {
+          border-color: #0F2B3F;
+        }
+
+        .text--back {
+          padding: 0 1rem;
+          font-size: 1.5rem;
+        }
+      }
+
+      article {
+        margin: 1.5rem;
         width: 800px;
 
         h2 {
@@ -50,7 +71,7 @@
         }
 
         p {
-          font-size: 17px;
+          font-size: 1rem;
         }
       }
     }
