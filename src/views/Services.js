@@ -75,7 +75,6 @@ class Services extends Component {
         return (
             <div id="services">
                 <div id="hmi">
-                    <h1>Dienste</h1>
                     <div className="hmi-wrapper">
                         <article>
                             <div className="text-icon-wrapper">
@@ -83,11 +82,11 @@ class Services extends Component {
                                 <span className="title">{hmiService.name}</span>
                             </div>
                             <p className="description">{hmiService.description}</p>
-                            <div className="hmi--footer">
-                                <hr className="divider"/>
-                                <p className="text--back">Zurück</p>
-                            </div>
                         </article>   
+                    </div>
+                    <div className="hmi--footer">
+                        <hr className="divider"/>
+                        <p className="text--back">Zurück</p>
                     </div>
                 </div>
                 <Footer
