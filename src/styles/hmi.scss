@@ -3,13 +3,17 @@
     margin: 125px auto;
     height: 593px;
     width: 1082px;
+
+    font-family: "VW Text", "Arial", sans-serif;
     background-image: url("https://images.ctfassets.net/pntshaoi0gaf/qkcf5luMYSIqEMS6c2q46/50422ce73e3efaf0e01205183d3478d5/HMI.PNG");
+
 
     h1 {
       position: relative;
-      top: 40px;
-      font-size: 30px;
+      top: 1.2rem;
+      font-size: 2rem;
       color: white;
+      text-align: center;
     }
 
     .selection a {
@@ -29,16 +33,16 @@
       .text-icon-wrapper {
         margin-top: 5rem;
         .title {
-          font-size: 2rem;
+          font-size: 1.8rem;
         }
       }
 
       .description {
         max-width: 550px;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
 
-      .hmi--icon {
+      .icon.hmi--icon {
         margin-right: 2rem;
         border: 1px solid #676767;
         padding: 0.9rem;
@@ -66,12 +70,12 @@
         width: 800px;
 
         h2 {
-          margin-top: 30px;
-          font-size: 24px;
+          margin: 1.5rem 0;
+          font-size: 1.8rem;
         }
 
         p {
-          font-size: 1rem;
+          font-size: 1.2rem;
         }
       }
     }
