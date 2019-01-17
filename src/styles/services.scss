@@ -1,7 +1,7 @@
-$primary-blue: #0199D9;
-$light-blue: #BCE3F5;
-$light-grey: #F3F5F6;
-$middle-grey: #9FA5AC;
+$primary-blue: #0199d9;
+$light-blue: #bce3f5;
+$light-grey: #f3f5f6;
+$middle-grey: #9fa5ac;
 
 #services {
   grid-area: content;
@@ -41,7 +41,7 @@ $middle-grey: #9FA5AC;
           border-radius: 100%;
           color: $primary-blue;
           width: 1.5em;
-          display: inline-block;    
+          display: inline-block;
           text-align: center;
         }
       }
@@ -57,7 +57,7 @@ $middle-grey: #9FA5AC;
         }
       }
     }
-  } 
+  }
 
   .active {
     color: $primary-blue;
@@ -71,7 +71,7 @@ $middle-grey: #9FA5AC;
     padding: 0;
   }
 
-  .text-icon-wrapper{
+  .text-icon-wrapper {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
@@ -81,19 +81,22 @@ $middle-grey: #9FA5AC;
       padding: 0.5rem;
     }
     .title {
-      font-family: 'VW Headline OT';
+      font-family: "VW Headline OT";
       margin: 0;
     }
   }
 
-  h1, h2, h3 {
-    font-family:  'VW Headline OT';
+  h1,
+  h2,
+  h3 {
+    font-family: "VW Headline OT";
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     text-align: center;
   }
-  
+
   p {
     font-size: 0.85rem;
   }
@@ -144,7 +147,7 @@ $middle-grey: #9FA5AC;
   @media screen and (min-width: 768px) {
     .selection {
       display: flex;
-  
+
       .select-item {
         margin-right: 2rem;
       }
@@ -152,17 +155,17 @@ $middle-grey: #9FA5AC;
 
     .breadcrumb {
       text-align: center;
-  
+
       ol {
-        display:  flex;
+        display: flex;
         padding: 0;
         justify-content: space-around;
       }
-    } 
+    }
     .service {
       .items {
         display: grid;
-        grid-template-columns: 50% 50%;      
+        grid-template-columns: 50% 50%;
       }
     }
   }

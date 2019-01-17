@@ -109,14 +109,10 @@ class Imprint extends Component {
 
     return (
       <React.Fragment>
-        <header className="header">
-          <h1>{"HMI " + title}</h1>
-        </header>
-
         <section className="content">
           <div id="hmi">
             <h1>{title}</h1>
-            <div className="hmi-wrapper">{renderedSections}</div>
+            <div>{renderedSections}</div>
           </div>
         </section>
       </React.Fragment>
