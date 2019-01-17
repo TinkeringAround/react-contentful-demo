@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../styles/imprint.scss";
+import "../styles/hmi.scss";
 
 import Section from "../components/Block";
 import RichText from "../components/Richtext";
